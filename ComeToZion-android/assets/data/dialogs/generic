@@ -1,0 +1,110 @@
+import dialogue
+from adonthell import rpg# -- pygettext support
+def _(message): return message
+
+class dialogtesto (dialogue.base):
+	text = [None,\
+		_("hello"),\
+		_("hello."),\
+		_("Humph..."),\
+		_("That's a nice hat!"),\
+		_("Thanks, Ive always liked it."),\
+		_("What's your name?"),\
+		_("I'm #name#."),\
+		_("What do you care?"),\
+		_("What do you do for a living?"),\
+		_("I'm a #occupation#."),\
+		_("(Ignores you.)"),\
+		_("What's up?"),\
+		_("Just doin' #occupation# stuff."),\
+		_("Nothin'."),\
+		_("What's up #name#?"),\
+		_("I need some #goodsType#."),\
+		_("Here's some #goodsType# for free."),\
+		_("I'll sell you some for #goodsPrice#."),\
+		_("I'm fresh out."),\
+		_("It's a deal."),\
+		_("Never mind."),\
+		_("Ok! Thank you."),\
+		_("Nice doing business with you."),\
+		_("Here you go! God speed."),\
+		_("OK."),\
+		_("Hi, I'm Enoch."),\
+		_("Nice to meet you."),\
+		_("Sorry, I don't have that kind of cash."),\
+		_("I have a question for you."),\
+		_("I'll try to answer it for you. What is it?"),\
+		_("Sorry. Not right now. Ask me later OK."),\
+		_("Sure. What's your question?"),\
+		_("===QUESTIONDIALOG===")]
+
+	cond = [\
+		"npc.trust >= 0.1\n",\
+		"npc.trust < 0.1\n",\
+		"!self.didit\n",\
+		"!npc.nameKnown\n",\
+		"!npc.nameKnown && npc.trust >= 0.2\n",\
+		"npc.trust < 0.2\n",\
+		"!npc.occupationKnown\n",\
+		"npc.trust >= 0.2\n",\
+		"npc.occupationKnown\n",\
+		"npc.nameKnown\n",\
+		"npc.baptized && npc.goodsQuantity > 0\n",\
+		"npc.goodsQuantity > 0 && npc.trust >= 0.1\n",\
+		"npc.goodsQuantity < 1 || npc.trust < 0.1\n",\
+		"npc.goodsPrice <= player.cash\n",\
+		"!npc.nameKnown && !npc.occupationKnown && !self.didit\n",\
+		"player.cash < npc.goodsPrice\n",\
+		"npc.trust > 0.5 && npc.numQuestions > 0\n"]
+
+	code = [\
+		"npc.addRandomTrust(.05,0.15)\n",\
+		"npc.setNameKnown\nnpc.addRandomTrust(0.05,0.15)\n",\
+		"npc.setOccupationKnown\n",\
+		"player.removeCash(npc.goodsPrice)\nplayer.addInven(npc.goodsType,1)\nnpc.addRandomTrust(0.05,0.1)\n",\
+		"player.addInven(npc.goodsType,1)\n",\
+		"npc.addRandomTrust(0.1,0.5)\n",\
+		"npc.addRandomTrust(0.5,0.6)\n"]
+
+	# -- (speaker, code, ((text, operation, condition), ...))
+	dlg = [\
+		(None, -1, ((26, 0, 14), (1, 0, -1), (12, 0, -1), (15, 0, 9), )), #
+		(None, -1, ((3, 0, 1), (2, 0, 0), (11, 0, 1), (29, 0, 16), )),	# 100,60
+		("Default", -1, ((9, 0, 6), (4, 0, 2), (6, 0, 3), (16, 0, 8), )),	# 100,140
+		("Default", -1, ()),	# 40,140
+		(None, -1, ((5, 0, -1), )),	# 100,220
+		("Default", 0, ((9, 0, 6), (6, 0, 3), (16, 0, 8), )),	# 100,300
+		(None, -1, ((11, 0, 1), (7, 0, 4), (8, 0, 5), )),	# 160,220
+		("Default", 1, ((9, 0, 6), (4, 0, 2), (16, 0, 8), )),	# 160,300
+		("Default", -1, ()),	# 220,300
+		(None, -1, ((10, 0, 7), (11, 0, 1), (8, 0, 5), )),	# 40,220
+		("Default", 2, ((4, 0, 2), (6, 0, 3), (16, 0, 8), )),	# 40,300
+		("Default", -1, ()),	# 160,140
+		(None, -1, ((3, 0, 1), (11, 0, 1), (13, 0, 8), (14, 0, -1), (29, 0, 16), )),	# 180,60
+		("Default", -1, ((4, 0, 2), (6, 0, 3), (16, 0, 8), )),	# 220,140
+		("Default", -1, ((9, 0, 6), (4, 0, 2), (6, 0, 3), (16, 0, 8), )),	# 280,140
+		(None, -1, ((3, 0, 1), (11, 0, 1), (13, 0, 8), (14, 0, -1), (29, 0, 16), )),	# 260,60
+		(None, -1, ((17, 0, 10), (18, 0, 11), (19, 0, 12), )),	# 340,220
+		("Default", -1, ((22, 0, -1), (21, 0, -1), )),	# 280,300
+		("Default", -1, ((21, 0, -1), (20, 0, 13), (28, 0, 15), )),	# 340,300
+		("Default", -1, ((9, 0, 6), (4, 0, 2), (6, 0, 3), (16, 0, 8), )),	# 400,300
+		(None, -1, ((23, 0, -1), )),	# 340,360
+		(None, -1, ((25, 0, -1), )),	# 300,360
+		(None, -1, ((24, 0, -1), )),	# 260,360
+		("Default", 3, ((4, 0, 2), (6, 0, 3), (16, 0, 8), )),	# 340,420
+		("Default", 4, ((4, 0, 2), (6, 0, 3), (16, 0, 8), )),	# 260,420
+		("Default", -1, ((4, 0, 2), (6, 0, 3), (16, 0, 8), )),	# 300,420
+		(None, 5, ((27, 0, -1), (3, 0, 1), (2, 0, 0), (11, 0, 1), (29, 0, 16), )),	# 20,60
+		("Default", 6, ((9, 0, 6), (4, 0, 2), (6, 0, 3), (16, 0, 8), )),	# -20,140
+		(None, -1, ((25, 0, -1), )),	# 380,360
+		("Default", -1, ((30, 0, -1), (31, 0, -1), (32, 0, -1), )),	# 420,140
+		(None, -1, ((33, 0, -1), )),	# 400,220
+		(None, -1, ()),	# 440,220
+		(None, -1, ((33, 0, -1), )),	# 480,220
+		("Default", -1, ())]	# 440,300
+
+
+	def __init__(self, p, n):
+		self.namespace = globals ()
+		self.the_player = p
+		self.the_npc = n
