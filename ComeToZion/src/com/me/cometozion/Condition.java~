@@ -1,0 +1,59 @@
+package com.me.cometozion;
+
+import java.lang.reflect.Method;
+
+public class Condition {
+	Npc npc;
+
+	boolean evaluate()
+	{
+		return true;
+	}
+	
+	void setNpc(Npc n)
+	{
+		this.npc = n;
+	}
+	
+	public Method getMethod(String varname) throws Exception
+	{
+		try
+		{
+			if(varname.contains("npc"))
+			{
+				return npc.getClass().getMethod(varname.split(".")[1]);
+			}
+			if(varname.contains("player"))
+			{
+				return npc.getClass().getMethod(varname.split(".")[1]);
+			}
+		}
+		catch(NoSuchMethodException e)
+		{
+			throw new Exception("Cannot evaluate expression, method of object does not exist: "+varname);
+		}
+
+		throw new Exception("Cannot evaluate expression, object does not exist: "+varname);
+	}
+	
+	public Object getField(String varname) throws Exception
+	{
+		try
+		{
+			if(varname.contains("npc"))
+			{
+				return npc.getClass().getField(varname.split(".")[1]);
+			}
+			if(varname.contains("player"))
+			{
+				return npc.getClass().getField(varname.split(".")[1]);
+			}
+		}
+		catch(NoSuchFieldException e)
+		{
+			throw new Exception("Cannot evaluate expression, field of object does not exist: "+varname);
+		}
+
+		throw new Exception("Cannot evaluate expression, object does not exist: "+varname);
+	}
+}

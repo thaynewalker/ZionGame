@@ -1,0 +1,7 @@
+package com.me.cometozion;
+
+import OrthogonalTiledMapRenderer;
+
+public class ZionOrthogonalTiledMapRenderer extends OrthogonalTiledMapRenderer {
+
+}

@@ -1,0 +1,18 @@
+package com.me.cometozion;
+
+public class OrCondition extends Condition{
+	Condition a;
+	Condition b;
+
+	OrCondition(Condition a, Condition b)
+	{
+		this.a = a;
+		this.b = b;
+	}
+
+	@Override
+	boolean evaluate()
+	{
+		return a.evaluate() || b.evaluate();
+	}
+}
