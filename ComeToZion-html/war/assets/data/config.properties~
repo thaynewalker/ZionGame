@@ -1,0 +1,542 @@
+#_Fonts.
+global.scoreFont = wellbutrin.fnt
+global.flyupFont = ocr_a_small.fnt
+global.textFont = ocr_a.fnt
+
+#_Entity_info
+entities.names = mainplayer
+
+entities.mainplayer.actions = walk,talk
+entities.mainplayer.walk.directions = 12;
+entities.mainplayer.walk.duration = 1.0;
+
+#_Map_info
+map.filepath = data/map/test.tmx
+
+#_Scripture_info
+Scripture.topics = Faith,Forgiveness,Charity,Role_of_Jesus,Other
+
+Scripture.references=Mat17@20;D&C14@7;D&C18@10,15-16;D&C19@16-19;D&C25@12;D&C58@26-27;D&C58@42-43;D&C59@9-10;D&C64@9-11;D&C64@23;D&C76@22-24;D&C82@3;D&C82@10;D&C84@33-39;D&C88@123-24;D&C89@18-21;D&C121@34-36;D&C130@18-19;D&C1@37-38;D&C8@2-3;D&C10@5;Rev14@6-7;Rev.20@12-13;JSH1@15-20;Heb5@4;Jas1@5-6;Jas2@17-18;2Ths2@1-3;2Tim3@1-5;2Tim3@16-17;Rom1@16;1Cor10@13;1Cor15@20-22;1Cor15@29;1Cor15@40-42;Eph4@11-14;Jhn14@15;Jhn17@3;Act7@55-56;Jhn3@5;Jhn7@17;Jhn10@16;Mat16@15-19;Mat25@40;Luk24@36-39;Amo3@7;Mal3@8-10;Lev19@18;Deu7@3-4;Jsh1@8;Gen39@9;Ex20@3-17;Ex33@11;3Ne27@27;Eth12@6;Eth12@27;Mos7@18;Abr3@22-23;Gen1@26-27;Jsh24@15;1Sam16@7;Job19@25-26;Mal4@5-6;Mat5@14-16;Mat6@24;Mni7@16-17;Mni7@45;Mni10@4-5;Mos1@39;Psa24@3-4;Pro3@5-6;Isa1@18;Isa29@13-14;Isa53@3-5;Isa55@8-9;Jer16@16;Ezk37@15-17;Dan2@44-45;D&C130@20-21;D&C130@22-23;D&C131@1-4;D&C137@7-10;3Ne11@29;Hel5@12;Alm41@10;Alm37@35;Alm37@6-7;Alm34@32-34;Alm32@21;Msh4@30;Msh3@19;Msh2@17;Jac2@18-19;2Ne32@8-9;2Ne32@3;2Ne28@7-9;2Ne9@28-29;2Ne2@27;2Ne2@25;1Ne19@23;1Ne3@7
+
+Questions.q1 = How_much_faith_is_enough?
+Questions.q2 = Am_I_saved_by_grace_or_by_works?
+Questions.q3 = I've_done_so_many_bad_things._Will_God_really_forgive_me?
+Questions.q4 = Will_God_help_me_to_do_what's_right?
+Questions.q5 = The_scriptures_seem_outdated._How_do_they_apply_to_me?
+Questions.q6 = ?
+
+1Ne3@7.keyword = Go_and_Do,_Obedience
+1Ne19@23.keyword = Liken_Scriptures
+2Ne2@25.keyword = The_Fall,_Joy
+2Ne2@27.keyword = Agency,_Eternal_Life_or_Death
+2Ne9@28-29.keyword = Counsel_of_God
+2Ne28@7-9.keyword = Justify_Sin
+2Ne32@3.keyword = Words_of_Christ,_Feast
+2Ne32@8-9.keyword = Pray_Always
+Jac2@18-19.keyword = Seek_Kingdom,_Riches
+Msh2@17.keyword = Service
+Msh3@19.keyword = Natural_Man,_Saint
+Msh4@30.keyword = _Self-control
+Alm32@21.keyword = Faith
+Alm34@32-34.keyword = Procrastination
+Alm37@6-7.keyword = Small_Things
+Alm37@35.keyword = Youth,_Keep_Commandments
+Alm41@10.keyword = Wickedness
+Hel5@12.keyword = Foundation
+3Ne11@29.keyword = Contention
+3Ne27@27.keyword = Like_Christ
+Eth12@6.keyword = Trial_of_Faith
+Eth12@27.keyword = Weakness_to_Strength
+Mni7@16-17.keyword = Recognize_Good
+Mni7@45.keyword = Charity
+Mni10@4-5.keyword = Truth,_Ask_God
+Mos1@39.keyword = God’s_Work
+Mos7@18.keyword = Zion
+Abr3@22-23.keyword = Premortal_Life
+Gen1@26-27.keyword = Image_of_God
+Gen39@9.keyword = Morally_Clean
+Ex20@3-17.keyword = Ten_Commandments
+Ex33@11.keyword = Revelation,_Face_to_Face
+Lev19@18.keyword = Love_Thy_Neighbor
+Deu7@3-4.keyword = Covenant_Marriage
+Jsh1@8.keyword = Meditate_of_the_Scriptures
+Jsh24@15.keyword = Choose_the_Lord
+1Sam16@7.keyword = Outward_Appearance
+Job19@25-26.keyword = Redeemer_Lives,_Resurrection
+Psa24@3-4.keyword = Cleanliness
+Pro3@5-6.keyword = Trust_in_the_Lord
+Isa1@18.keyword = Repentance,_Forgiveness
+Isa29@13-14.keyword = Marvelous_Work_and_Wonder
+Isa53@3-5.keyword = Jesus_Christ
+Isa55@8-9.keyword = Higher_Ways_and_Thoughts
+Jer16@16.keyword = Missionary_Work
+Ezk37@15-17.keyword = Bible,_Book_of_Mormon
+Dan2@44-45.keyword = Kingdom_of_God
+Amo3@7.keyword = Prophets
+Mal3@8-10.keyword = Tithes_and_Offerings
+Mal4@5-6.keyword = Sealing_Power
+Mat5@14-16.keyword = Example
+Mat6@24.keyword = Serve_God,_Mammon
+Mat16@15-19.keyword = Revelation,_Keys
+Mat25@40.keyword = Serve_Others
+Luk24@36-39.keyword = Resurrected_Christ
+Jhn3@5.keyword = Born_of_Water_and_Spirit
+Jhn7@17.keyword = Know_Doctrine
+Jhn10@16.keyword = Other_Sheep
+Jhn14@15.keyword = Keep_Commandments
+Jhn17@3.keyword = Eternal_Life,_Know_God
+Act7@55-56.keyword = Godhead
+Rom1@16.keyword = Not_Ashamed_of_Gospel
+1Cor10@13.keyword = Escaping_Temptation
+1Cor15@20-22.keyword = Resurrection_for_All
+1Cor15@29.keyword = Baptism_for_the_Dead
+1Cor15@40-42.keyword = Degrees_of_Glory
+Eph4@11-14.keyword = Church_Organization_Purpose_of_Church
+2Ths2@1-3.keyword = Apostasy
+2Tim3@1-5.keyword = Signs_of_Last_Days
+2Tim3@16-17.keyword = Purpose_of_Scriptures
+Heb5@4.keyword = Priesthood_Authority
+Jas1@5-6.keyword = Ask_God
+Jas2@17-18.keyword = Faith_and_Works
+Rev14@6-7.keyword = Restoration_of_the_Gospel
+Rev.20@12-13.keyword = Judgment
+JSH1@15-20.keyword = First_Vision
+D&C1@37-38.keyword = Search_the_Scriptures
+D&C8@2-3.keyword = Spirit_of_Revelation
+D&C10@5.keyword = Pray_Always
+D&C14@7.keyword = Eternal_Life_Greatest_Gift
+D&C18@10,15-16.keyword = Worth_of_Souls
+D&C19@16-19.keyword = Repentance,_Suffering
+D&C25@12.keyword = Worthy_Music
+D&C58@26-27.keyword = Agency_for_Good
+D&C58@42-43.keyword = Confess_and_Forsake
+D&C59@9-10.keyword = Sabbath_Day
+D&C64@9-11.keyword = Forgive_Everyone
+D&C64@23.keyword = Tithing
+D&C76@22-24.keyword = Christ_Lives
+D&C82@3.keyword = Much_Given,_Much_Required
+D&C82@10.keyword = God's_Promises
+D&C84@33-39.keyword = Oath_and_Covenant
+D&C88@123-24.keyword = Righteous_Living
+D&C89@18-21.keyword = Word_of_Wisdom,_Promise
+D&C121@34-36.keyword = Priesthood_Power,_Called_and_Chosen
+D&C130@18-19.keyword = Knowledge
+D&C130@20-21.keyword = Blessings_from_Obedience
+D&C130@22-23.keyword = Godhead
+D&C131@1-4.keyword = Celestial_Marriage
+D&C137@7-10.keyword = Heirs_of_Celestial_Kingdom
+
+Scripture.Mat17@20.ref = Matthew_17@20
+Scripture.Mat17@20.question = q1
+Scripture.Mat17@20.KJV.text = 20_...Verily_I_say_unto_you,_If_ye_have_faith_as_a_grain_of_mustard_seed,_ye_shall_say_unto_this_mountain,_Remove_hence_to_yonder_place;_and_it_shall_remove;_and_nothing_shall_be_impossible_unto_you.
+
+Scripture.Isa1@18.ref = Isaiah_1@18
+Scripture.Isa1@18.question = q3
+Scripture.Isa1@18.KJV.text = 18_Come_now,_and_let_us_reason_together,_saith_the_LORD:_though_your_sins_be_as_scarlet,_they_shall_be_as_white_as_snow;_though_they_be_red_like_crimson,_they_shall_be_as_wool.
+
+Scripture.1Ne3@7.ref = 1_Nephi_3@7
+Scripture.1Ne3@7.question = q4
+Scripture.1Ne3@7.KJV.text = 7_...I_will_go_and_do_the_things_which_the_Lord_hath_commanded,_for_I_know_that_the_Lord_giveth_no_commandments_unto_the_children_of_men,_save_he_shall_prepare_a_way_for_them_that_they_may_accomplish_the_thing_which_he_commandeth_them.
+
+Scripture.1Ne19@23.ref = 1_Nephi_19@23
+Scripture.1Ne19@23.question = q5
+Scripture.1Ne19@23.KJV.text = 23_And_I_did_read_many_things_unto_them_which_were_written_in_the_books_of_Moses;_but_that_I_might_more_fully_persuade_them_to_believe_in_the_Lord_their_Redeemer_I_did_read_unto_them_that_which_was_written_by_the_prophet_Isaiah;_for_I_did_liken_all_scriptures_unto_us,_that_it_might_be_for_our_profit_and_learning.
+
+Scripture.2Ne2@25.ref = 2_Nephi_2@25
+Scripture.2Ne2@25.question =q6
+Scripture.2Ne2@25.KJV.text = 25_Adam_fell_that_men_might_be;_and_men_are,_that_they_might_have_joy.
+
+Scripture.2Ne2@27.ref = 2_Nephi_2@27
+Scripture.2Ne2@27.question =q6
+Scripture.2Ne2@27.KJV.text = 27_Wherefore,_men_are_free_according_to_the_flesh;_and_all_things_are_given_them_which_are_expedient_unto_man._And_they_are_free_to_choose_liberty_and_eternal_life,_through_the_great_Mediator_of_all_men,_or_to_choose_captivity_and_death,_according_to_the_captivity_and_power_of_the_devil;_for_he_seeketh_that_all_men_might_be_miserable_like_unto_himself.
+
+Scripture.2Ne9@28-29.ref = 2_Nephi_9@28-29
+Scripture.2Ne9@28-29.question =q6
+Scripture.2Ne9@28-29.KJV.text = 28_O_that_cunning_plan_of_the_evil_one!_O_the_vainness,_and_the_frailties,_and_the_foolishness_of_men!_When_they_are_learned_they_think_they_are_wise,_and_they_hearken_not_unto_the_counsel_of_God,_for_they_set_it_aside,_supposing_they_know_of_themselves,_wherefore,_their_wisdom_is_foolishness_and_it_profiteth_them_not._And_they_shall_perish.\n_29_But_to_be_learned_is_good_if_they_hearken_unto_the_counsels_of_God.
+
+Scripture.2Ne28@7-9.ref = 2_Nephi_28@7-9
+Scripture.2Ne28@7-9.question =q6
+Scripture.2Ne28@7-9.KJV.text = 7_Yea,_and_there_shall_be_many_which_shall_say:_Eat,_drink,_and_be_merry,_for_tomorrow_we_die;_and_it_shall_be_well_with_us.\n_8_And_there_shall_also_be_many_which_shall_say:_Eat,_drink,_and_be_merry;_nevertheless,_fear_God--he_will_justify_in_committing_a_little_sin;_yea,_lie_a_little,_take_the_advantage_of_one_because_of_his_words,_dig_a_pit_for_thy_neighbor;_there_is_no_harm_in_this;_and_do_all_these_things,_for_tomorrow_we_die;_and_if_it_so_be_that_we_are_guilty,_God_will_beat_us_with_a_few_stripes,_and_at_last_we_shall_be_saved_in_the_kingdom_of_God.\n_9_Yea,_and_there_shall_be_many_which_shall_teach_after_this_manner,_false_and_vain_and_foolish_doctrines,_and_shall_be_puffed_up_in_their_hearts,_and_shall_seek_deep_to_hide_their_counsels_from_the_Lord;_and_their_works_shall_be_in_the_dark.
+
+Scripture.2Ne32@3.ref = 2_Nephi_32@3
+Scripture.2Ne32@3.question =q6
+Scripture.2Ne32@3.KJV.text = 3_Angels_speak_by_the_power_of_the_Holy_Ghost;_wherefore,_they_speak_the_words_of_Christ._Wherefore,_I_said_unto_you,_feast_upon_the_words_of_Christ;_for_behold,_the_words_of_Christ_will_tell_you_all_things_what_ye_should_do.
+
+Scripture.2Ne32@8-9.ref = 2_Nephi_32@8-9
+Scripture.2Ne32@8-9.question =q6
+Scripture.2Ne32@8-9.KJV.text = 8_And_now,_my_beloved_brethren,_I_perceive_that_ye_ponder_still_in_your_hearts;_and_it_grieveth_me_that_I_must_speak_concerning_this_thing._For_if_ye_would_hearken_unto_the_Spirit_which_teacheth_a_man_to_pray_ye_would_know_that_ye_must_pray;_for_the_evil_spirit_teacheth_not_a_man_to_pray,_but_teacheth_him_that_he_must_not_pray.\n_9_But_behold,_I_say_unto_you_that_ye_must_pray_always,_and_not_faint;_that_ye_must_not_perform_any_thing_unto_the_Lord_save_in_the_first_place_ye_shall_pray_unto_the_Father_in_the_name_of_Christ,_that_he_will_consecrate_thy_performance_unto_thee,_that_thy_performance_may_be_for_the_welfare_of_thy_soul.
+
+Scripture.Jac2@18-19.ref = Jacob_2@18-19
+Scripture.Jac2@18-19.question =q6
+Scripture.Jac2@18-19.KJV.text = 18_But_before_ye_seek_for_riches,_seek_ye_for_the_kingdom_of_God.\n_19_And_after_ye_have_obtained_a_hope_in_Christ_ye_shall_obtain_riches,_if_ye_seek_them;_and_ye_will_seek_them_for_the_intent_to_do_good--to_clothe_the_naked,_and_to_feed_the_hungry,_and_to_liberate_the_captive,_and_administer_relief_to_the_sick_and_the_afflicted.
+
+Scripture.Msh2@17.ref = Mosiah_2@17
+Scripture.Msh2@17.question =q6
+Scripture.Msh2@17.KJV.text = 17_And_behold,_I_tell_you_these_things_that_ye_may_learn_wisdom;_that_ye_may_learn_that_when_ye_are_in_the_service_of_your_fellow_beings_ye_are_only_in_the_service_of_your_God.
+
+Scripture.Msh3@19.ref = Mosiah_3@19
+Scripture.Msh3@19.question =q6
+Scripture.Msh3@19.KJV.text = 19_For_the_natural_man_is_an_enemy_to_God,_and_has_been_from_the_fall_of_Adam,_and_will_be,_forever_and_ever,_unless_he_yields_to_the_enticings_of_the_Holy_Spirit,_and_putteth_off_the_natural_man_and_becometh_a_saint_through_the_atonement_of_Christ_the_Lord,_and_becometh_as_a_child,_submissive,_meek,_humble,_patient,_full_of_love,_willing_to_submit_to_all_things_which_the_Lord_seeth_fit_to_inflict_upon_him,_even_as_a_child_doth_submit_to_his_father.
+
+Scripture.Msh4@30.ref = Mosiah_4@30
+Scripture.Msh4@30.question =q6
+Scripture.Msh4@30.KJV.text = 30_But_this_much_I_can_tell_you,_that_if_ye_do_not_watch_yourselves,_and_your_thoughts,_and_your_words,_and_your_deeds,_and_observe_the_commandments_of_God,_and_continue_in_the_faith_of_what_ye_have_heard_concerning_the_coming_of_our_Lord,_even_unto_the_end_of_your_lives,_ye_must_perish._And_now,_O_man,_remember,_and_perish_not.
+
+Scripture.Alm32@21.ref = Alma_32@21
+Scripture.Alm32@21.question =q6
+Scripture.Alm32@21.KJV.text = 21_And_now_as_I_said_concerning_faith--faith_is_not_to_have_a_perfect_knowledge_of_things;_therefore_if_ye_have_faith_ye_hope_for_things_which_are_not_seen,_which_are_true.
+
+Scripture.Alm34@32-34.ref = Alma_34@32-34
+Scripture.Alm34@32-34.question =q6
+Scripture.Alm34@32-34.KJV.text = 32_For_behold,_this_life_is_the_time_for_men_to_prepare_to_meet_God;_yea,_behold_the_day_of_this_life_is_the_day_for_men_to_perform_their_labors.\n_33_And_now,_as_I_said_unto_you_before,_as_ye_have_had_so_many_witnesses,_therefore,_I_beseech_of_you_that_ye_do_not_procrastinate_the_day_of_your_repentance_until_the_end;_for_after_this_day_of_life,_which_is_given_us_to_prepare_for_eternity,_behold,_if_we_do_not_improve_our_time_while_in_this_life,_then_cometh_the_night_of_darkness_wherein_there_can_be_no_labor_performed.\n_34_Ye_cannot_say,_when_ye_are_brought_to_that_awful_crisis,_that_I_will_repent,_that_I_will_return_to_my_God._Nay,_ye_cannot_say_this;_for_that_same_spirit_which_doth_possess_your_bodies_at_the_time_that_ye_go_out_of_this_life,_that_same_spirit_will_have_power_to_possess_your_body_in_that_eternal_world.
+
+Scripture.Alm37@6-7.ref = Alma_37@6-7
+Scripture.Alm37@6-7.question =q6
+Scripture.Alm37@6-7.KJV.text = 6_Now_ye_may_suppose_that_this_is_foolishness_in_me;_but_behold_I_say_unto_you,_that_by_small_and_simple_things_are_great_things_brought_to_pass;_and_small_means_in_many_instances_doth_confound_the_wise.\n_7_And_the_Lord_God_doth_work_by_means_to_bring_about_his_great_and_eternal_purposes;_and_by_very_small_means_the_Lord_doth_confound_the_wise_and_bringeth_about_the_salvation_of_many_souls.
+
+Scripture.Alm37@35.ref = Alma_37@35
+Scripture.Alm37@35.question =q6
+Scripture.Alm37@35.KJV.text = 35_O,_remember,_my_son,_and_learn_wisdom_in_thy_youth;_yea,_learn_in_thy_youth_to_keep_the_commandments_of_God.
+
+Scripture.Alm41@10.ref = Alma_41@10
+Scripture.Alm41@10.question =q6
+Scripture.Alm41@10.KJV.text = 10_Do_not_suppose,_because_it_has_been_spoken_concerning_restoration,_that_ye_shall_be_restored_from_sin_to_happiness._Behold,_I_say_unto_you,_wickedness_never_was_happiness.
+
+Scripture.Hel5@12.ref = Helaman_5@12
+Scripture.Hel5@12.question =q6
+Scripture.Hel5@12.KJV.text = 12_And_now,_my_sons,_remember,_remember_that_it_is_upon_the_rock_of_our_Redeemer,_who_is_Christ,_the_Son_of_God,_that_ye_must_build_your_foundation;_that_when_the_devil_shall_send_forth_his_mighty_winds,_yea,_his_shafts_in_the_whirlwind,_yea,_when_all_his_hail_and_his_mighty_storm_shall_beat_upon_you,_it_shall_have_no_power_over_you_to_drag_you_down_to_the_gulf_of_misery_and_endless_wo,_because_of_the_rock_upon_which_ye_are_built,_which_is_a_sure_foundation,_a_foundation_whereon_if_men_build_they_cannot_fall.
+
+Scripture.3Ne11@29.ref = 3_Nephi_11@29
+Scripture.3Ne11@29.question =q6
+Scripture.3Ne11@29.KJV.text = 29_For_verily,_verily_I_say_unto_you,_he_that_hath_the_spirit_of_contention_is_not_of_me,_but_is_of_the_devil,_who_is_the_father_of_contention,_and_he_stirreth_up_the_hearts_of_men_to_contend_with_anger,_one_with_another.
+
+Scripture.3Ne27@27.ref = 3_Nephi_27@27
+Scripture.3Ne27@27.question =q6
+Scripture.3Ne27@27.KJV.text = 27_And_know_ye_that_ye_shall_be_judges_of_this_people,_according_to_the_judgment_which_I_shall_give_unto_you,_which_shall_be_just._Therefore,_what_manner_of_men_ought_ye_to_be?_Verily_I_say_unto_you,_even_as_I_am.
+
+Scripture.Eth12@6.ref = Ether_12@6
+Scripture.Eth12@6.question =q6
+Scripture.Eth12@6.KJV.text = 6_And_now,_I,_Moroni,_would_speak_somewhat_concerning_these_things;_I_would_show_unto_the_world_that_faith_is_things_which_are_hoped_for_and_not_seen;_wherefore,_dispute_not_because_ye_see_not,_for_ye_receive_no_witness_until_after_the_trial_of_your_faith.
+
+Scripture.Eth12@27.ref = Ether_12@27
+Scripture.Eth12@27.question =q6
+Scripture.Eth12@27.KJV.text = 27_And_if_men_come_unto_me_I_will_show_unto_them_their_weakness._I_give_unto_men_weakness_that_they_may_be_humble;_and_my_grace_is_sufficient_for_all_men_that_humble_themselves_before_me;_for_if_they_humble_themselves_before_me,_and_have_faith_in_me,_then_will_I_make_weak_things_become_strong_unto_them.
+
+Scripture.Mni7@16-17.ref = Moroni_7@16-17
+Scripture.Mni7@16-17.question =q6
+Scripture.Mni7@16-17.KJV.text = 16_For_behold,_the_Spirit_of_Christ_is_given_to_every_man,_that_he_may_know_good_from_evil;_wherefore,_I_show_unto_you_the_way_to_judge;_for_every_thing_which_inviteth_to_do_good,_and_to_persuade_to_believe_in_Christ,_is_sent_forth_by_the_power_and_gift_of_Christ;_wherefore_ye_may_know_with_a_perfect_knowledge_it_is_of_God.\n_17_But_whatsoever_thing_persuadeth_men_to_do_evil,_and_believe_not_in_Christ,_and_deny_him,_and_serve_not_God,_then_ye_may_know_with_a_perfect_knowledge_it_is_of_the_devil;_for_after_this_manner_doth_the_devil_work,_for_he_persuadeth_no_man_to_do_good,_no,_not_one;_neither_do_his_angels;_neither_do_they_who_subject_themselves_unto_him.
+
+Scripture.Mni7@45.ref = Moroni_7@45
+Scripture.Mni7@45.question =q6
+Scripture.Mni7@45.KJV.text = 45_And_charity_suffereth_long,_and_is_kind,_and_envieth_not,_and_is_not_puffed_up,_seeketh_not_her_own,_is_not_easily_provoked,_thinketh_no_evil,_and_rejoiceth_not_in_iniquity_but_rejoiceth_in_the_truth,_beareth_all_things,_believeth_all_things,_hopeth_all_things,_endureth_all_things.
+
+Scripture.Mni10@4-5.ref = Moroni_10@4-5
+Scripture.Mni10@4-5.question =q6
+Scripture.Mni10@4-5.KJV.text = 4_And_when_ye_shall_receive_these_things,_I_would_exhort_you_that_ye_would_ask_God,_the_Eternal_Father,_in_the_name_of_Christ,_if_these_things_are_not_true;_and_if_ye_shall_ask_with_a_sincere_heart,_with_real_intent,_having_faith_in_Christ,_he_will_manifest_the_truth_of_it_unto_you,_by_the_power_of_the_Holy_Ghost.\n_5_And_by_the_power_of_the_Holy_Ghost_ye_may_know_the_truth_of_all_things.
+
+Old_Testament
+
+Scripture.Mos1@39.ref = Moses_1@39
+Scripture.Mos1@39.question =q6
+Scripture.Mos1@39.KJV.text = 39_For_behold,_this_is_my_work_and_my_glory--to_bring_to_pass_the_immortality_and_eternal_life_of_man.
+
+Scripture.Mos7@18.ref = Moses_7@18
+Scripture.Mos7@18.question =q6
+Scripture.Mos7@18.KJV.text = 18_And_the_Lord_called_his_people_ZION,_because_they_were_of_one_heart_and_one_mind,_and_dwelt_in_righteousness;_and_there_was_no_poor_among_them.
+
+Scripture.Abr3@22-23.ref = Abraham_3@22-23
+Scripture.Abr3@22-23.question =q6
+Scripture.Abr3@22-23.KJV.text = 22_Now_the_Lord_had_shown_unto_me,_Abraham,_the_intelligences_that_were_organized_before_the_world_was;_and_among_all_these_there_were_many_of_the_noble_and_great_ones;\n23_And_God_saw_these_souls_that_they_were_good,_and_he_stood_in_the_midst_of_them,_and_he_said:_These_I_will_make_my_rulers;_for_he_stood_among_those_that_were_spirits,_and_he_saw_that_they_were_good;_and_he_said_unto_me:_Abraham,_thou_art_one_of_them;_thou_wast_chosen_before_thou_wast_born.
+
+Scripture.Gen1@26-27.ref = Genesis_1@26-27
+Scripture.Gen1@26-27.question =q6
+Scripture.Gen1@26-27.KJV.text = 26_¶_And_God_said,_Let_us_make_man_in_our_image,_after_our_likeness:_and_let_them_have_dominion_over_the_fish_of_the_sea,_and_over_the_fowl_of_the_air,_and_over_the_cattle,_and_over_all_the_earth,_and_over_every_creeping_thing_that_creepeth_upon_the_earth.\n_27_So_God_created_man_in_his_[own]_image,_in_the_image_of_God_created_he_him;_male_and_female_created_he_them.
+
+Scripture.Gen39@9.ref = Genesis_39@9
+Scripture.Gen39@9.question =q6
+Scripture.Gen39@9.KJV.text = 9_[There_is]_none_greater_in_this_house_than_I;_neither_hath_he_kept_back_any_thing_from_me_but_thee,_because_thou_[art]_his_wife:_how_then_can_I_do_this_great_wickedness,_and_sin_against_God?
+
+Scripture.Exo20@3-17.ref = Exodus_20@3-17
+Scripture.Exo20@3-17.question =q6
+Scripture.Exo20@3-17.KJV.text = 3_Thou_shalt_have_no_other_gods_before_me.\n_4_Thou_shalt_not_make_unto_thee_any_graven_image,_or_any_likeness_[of_any_thing]_that_[is]_in_heaven_above,_or_that_[is]_in_the_earth_beneath,_or_that_[is]_in_the_water_under_the_earth:\n5_Thou_shalt_not_bow_down_thyself_to_them,_nor_serve_them:_for_I_the_LORD_thy_God_[am]_a_jealous_God,_visiting_the_iniquity_of_the_fathers_upon_the_children_unto_the_third_and_fourth_[generation]_of_them_that_hate_me;\n6_And_shewing_mercy_unto_thousands_of_them_that_love_me,_and_keep_my_commandments.\n_7_Thou_shalt_not_take_the_name_of_the_LORD_thy_God_in_vain;_for_the_LORD_will_not_hold_him_guiltless_that_taketh_his_name_in_vain.\n_8_Remember_the_sabbath_day,_to_keep_it_holy.\n_9_Six_days_shalt_thou_labour,_and_do_all_thy_work:\n10_But_the_seventh_day_[is]_the_sabbath_of_the_LORD_thy_God:_[in_it]_thou_shalt_not_do_any_work,_thou,_nor_thy_son,_nor_thy_daughter,_thy_manservant,_nor_thy_maidservant,_nor_thy_cattle,_nor_thy_stranger_that_[is]_within_thy_gates:\n11_For_[in]_six_days_the_LORD_made_heaven_and_earth,_the_sea,_and_all_that_in_them_[is],_and_rested_the_seventh_day:_wherefore_the_LORD_blessed_the_sabbath_day,_and_hallowed_it.\n_12_¶_Honour_thy_father_and_thy_mother:_that_thy_days_may_be_long_upon_the_land_which_the_LORD_thy_God_giveth_thee.\n_13_Thou_shalt_not_kill.\n_14_Thou_shalt_not_commit_adultery.\n_15_Thou_shalt_not_steal.\n_16_Thou_shalt_not_bear_false_witness_against_thy_neighbour.\n_17_Thou_shalt_not_covet_thy_neighbour's_house,_thou_shalt_not_covet_thy_neighbour's_wife,_nor_his_manservant,_nor_his_maidservant,_nor_his_ox,_nor_his_ass,_nor_any_thing_that_[is]_thy_neighbour's.
+
+Scripture.Exo33@11.ref = Exodus_33@11
+Scripture.Exo33@11.question =q6
+Scripture.Exo33@11.KJV.text = 11_And_the_LORD_spake_unto_Moses_face_to_face,_as_a_man_speaketh_unto_his_friend._And_he_turned_again_into_the_camp:_but_his_servant_Joshua,_the_son_of_Nun,_a_young_man,_departed_not_out_of_the_tabernacle.
+
+Scripture.Lev19@18.ref = Leviticus_19@18
+Scripture.Lev19@18.question =q6
+Scripture.Lev19@18.KJV.text = 18_Thou_shalt_not_avenge,_nor_bear_any_grudge_against_the_children_of_thy_people,_but_thou_shalt_love_thy_neighbour_as_thyself:_I_[am]_the_LORD.
+
+Scripture.Deu7@3-4.ref = Deuteronomy_7@3-4
+Scripture.Deu7@3-4.question =q6
+Scripture.Deu7@3-4.KJV.text = 3_Neither_shalt_thou_make_marriages_with_them;_thy_daughter_thou_shalt_not_give_unto_his_son,_nor_his_daughter_shalt_thou_take_unto_thy_son.\n_4_For_they_will_turn_away_thy_son_from_following_me,_that_they_may_serve_other_gods:_so_will_the_anger_of_the_LORD_be_kindled_against_you,_and_destroy_thee_suddenly.
+
+Scripture.Jsh1@8.ref = Joshua_1@8
+Scripture.Jsh1@8.question =q6
+Scripture.Jsh1@8.KJV.text = 8_This_book_of_the_law_shall_not_depart_out_of_thy_mouth;_but_thou_shalt_meditate_therein_day_and_night,_that_thou_mayest_observe_to_do_according_to_all_that_is_written_therein:_for_then_thou_shalt_make_thy_way_prosperous,_and_then_thou_shalt_have_good_success.
+
+Scripture.Jsh24@15.ref = Joshua_24@15
+Scripture.Jsh24@15.question =q6
+Scripture.Jsh24@15.KJV.text = 15_¶_And_if_it_seem_evil_unto_you_to_serve_the_LORD,_choose_you_this_day_whom_ye_will_serve;_whether_the_gods_which_your_fathers_served_that_[were]_on_the_other_side_of_the_flood,_or_the_gods_of_the_Amorites,_in_whose_land_ye_dwell:_but_as_for_me_and_my_house,_we_will_serve_the_LORD.
+
+Scripture.1Sam16@7.ref = 1_Samuel_16@7
+Scripture.1Sam16@7.question =q6
+Scripture.1Sam16@7.KJV.text = 7_But_the_LORD_said_unto_Samuel,_Look_not_on_his_countenance,_or_on_the_height_of_his_stature;_because_I_have_refused_him:_for_[the_LORD_seeth]_not_as_man_seeth;_for_man_looketh_on_the_outward_appearance,_but_the_LORD_looketh_on_the_heart.
+
+Scripture.Job19@25-26.ref = Job_19@25-26
+Scripture.Job19@25-26.question =q6
+Scripture.Job19@25-26.KJV.text = 25_For_I_know_[that]_my_redeemer_liveth,_and_[that]_he_shall_stand_at_the_latter_[day]_upon_the_earth:\n26_And_[though]_after_my_skin_[worms]_destroy_this_[body],_yet_in_my_flesh_shall_I_see_God:
+
+Scripture.Psa24@3-4.ref = Psalms_24@3-4
+Scripture.Psa24@3-4.question =q6
+Scripture.Psa24@3-4.KJV.text = 3_¶_Who_shall_ascend_into_the_hill_of_the_LORD?_or_who_shall_stand_in_his_holy_place?\n_4_He_that_hath_clean_hands,_and_a_pure_heart;_who_hath_not_lifted_up_his_soul_unto_vanity,_nor_sworn_deceitfully.
+
+Scripture.Pro3@5-6.ref = Proverbs_3@5-6
+Scripture.Pro3@5-6.question =q6
+Scripture.Pro3@5-6.KJV.text = 5_Trust_in_the_LORD_with_all_thine_heart;_and_lean_not_unto_thine_own_understanding.\n_6_In_all_thy_ways_acknowledge_him,_and_he_shall_direct_thy_paths.
+
+Scripture.Ish1@18.ref = Isaiah_1@18
+Scripture.Ish1@18.question =q6
+Scripture.Ish1@18.KJV.text = 18_Come_now,_and_let_us_reason_together,_saith_the_LORD:_though_your_sins_be_as_scarlet,_they_shall_be_as_white_as_snow;_though_they_be_red_like_crimson,_they_shall_be_as_wool.
+
+Scripture.Ish29@13-14.ref = Isaiah_29@13-14
+Scripture.Ish29@13-14.question =q6
+Scripture.Ish29@13-14.KJV.text = 13_Wherefore_the_Lord_said,_Forasmuch_as_this_people_draw_near_[me]_with_their_mouth,_and_with_their_lips_do_honour_me,_but_have_removed_their_heart_far_from_me,_and_their_fear_toward_me_is_taught_by_the_precept_of_men:\n14_Therefore,_behold,_I_will_proceed_to_do_a_marvellous_work_among_this_people,_[even]_a_marvellous_work_and_a_wonder:_for_the_wisdom_of_their_wise_[men]_shall_perish,_and_the_understanding_of_their_prudent_[men]_shall_be_hid.
+
+Scripture.Ish53@3-5.ref = Isaiah_53@3-5
+Scripture.Ish53@3-5.question =q6
+Scripture.Ish53@3-5.KJV.text = 3_He_is_despised_and_rejected_of_men;_a_man_of_sorrows,_and_acquainted_with_grief:_and_we_hid_as_it_were_[our]_faces_from_him;_he_was_despised,_and_we_esteemed_him_not.\n_4_¶_Surely_he_hath_borne_our_griefs,_and_carried_our_sorrows:_yet_we_did_esteem_him_stricken,_smitten_of_God,_and_afflicted.\n_5_But_he_[was]_wounded_for_our_transgressions,_[he_was]_bruised_for_our_iniquities:_the_chastisement_of_our_peace_[was]_upon_him;_and_with_his_stripes_we_are_healed.
+
+Scripture.Ish55@8-9.ref = Isaiah_55@8-9
+Scripture.Ish55@8-9.question =q6
+Scripture.Ish55@8-9.KJV.text = 8_For_my_thoughts_are_not_your_thoughts,_neither_are_your_ways_my_ways,_saith_the_LORD.\n_9_For_as_the_heavens_are_higher_than_the_earth,_so_are_my_ways_higher_than_your_ways,_and_my_thoughts_than_your_thoughts.
+
+Scripture.Jer16@16.ref = Jeremiah_16@16
+Scripture.Jer16@16.question =q6
+Scripture.Jer16@16.KJV.text = 16_Behold,_I_will_send_for_many_fishers,_saith_the_LORD,_and_they_shall_fish_them;_and_after_will_I_send_for_many_hunters,_and_they_shall_hunt_them_from_every_mountain,_and_from_every_hill,_and_out_of_the_holes_of_the_rocks.
+
+Scripture.Ezk37@15-17.ref = Ezekiel_37@15-17
+Scripture.Ezk37@15-17.question =q6
+Scripture.Ezk37@15-17.KJV.text = 15_¶_The_word_of_the_LORD_came_again_unto_me,_saying,\n16_Moreover,_thou_son_of_man,_take_thee_one_stick,_and_write_upon_it,_For_Judah,_and_for_the_children_of_Israel_his_companions:_then_take_another_stick,_and_write_upon_it,_For_Joseph,_the_stick_of_Ephraim,_and_for_all_the_house_of_Israel_his_companions:\n17_And_join_them_one_to_another_into_one_stick;_and_they_shall_become_one_in_thine_hand.
+
+Scripture.Dan2@44-45.ref = Daniel_2@44-45
+Scripture.Dan2@44-45.question =q6
+Scripture.Dan2@44-45.KJV.text = 44_And_in_the_days_of_these_kings_shall_the_God_of_heaven_set_up_a_kingdom,_which_shall_never_be_destroyed:_and_the_kingdom_shall_not_be_left_to_other_people,_[but]_it_shall_break_in_pieces_and_consume_all_these_kingdoms,_and_it_shall_stand_for_ever.\n_45_Forasmuch_as_thou_sawest_that_the_stone_was_cut_out_of_the_mountain_without_hands,_and_that_it_brake_in_pieces_the_iron,_the_brass,_the_clay,_the_silver,_and_the_gold;_the_great_God_hath_made_known_to_the_king_what_shall_come_to_pass_hereafter:_and_the_dream_[is]_certain,_and_the_interpretation_thereof_sure.
+
+Scripture.Amo3@7.ref = Amos_3@7
+Scripture.Amo3@7.question =q6
+Scripture.Amo3@7.KJV.text = 7_Surely_the_Lord_GOD_will_do_nothing,_but_he_revealeth_his_secret_unto_his_servants_the_prophets.
+
+Scripture.Mal3@8-10.ref = Malachi_3@8-10
+Scripture.Mal3@8-10.question =q6
+Scripture.Mal3@8-10.KJV.text = 8_Will_a_man_rob_God?_Yet_ye_have_robbed_me._But_ye_say,_Wherein_have_we_robbed_thee?_In_tithes_and_offerings.\n_9_Ye_are_cursed_with_a_curse:_for_ye_have_robbed_me,_even_this_whole_nation.\n_10_Bring_ye_all_the_tithes_into_the_storehouse,_that_there_may_be_meat_in_mine_house,_and_prove_me_now_herewith,_saith_the_LORD_of_hosts,_if_I_will_not_open_you_the_windows_of_heaven,_and_pour_you_out_a_blessing,_that_there_shall_not_be_room_enough_to_receive_it.
+
+Scripture.Mal4@5-6.ref = Malachi_4@5-6
+Scripture.Mal4@5-6.question =q6
+Scripture.Mal4@5-6.KJV.text = 5_Behold,_I_will_send_you_Elijah_the_prophet_before_the_coming_of_the_great_and_dreadful_day_of_the_LORD:\n6_And_he_shall_turn_the_heart_of_the_fathers_to_the_children,_and_the_heart_of_the_children_to_their_fathers,_lest_I_come_and_smite_the_earth_with_a_curse.
+
+New_Testament
+
+Scripture.Mat5@14-16.ref = Matthew_5@14-16
+Scripture.Mat5@14-16.question =q6
+Scripture.Mat5@14-16.KJV.text = 14_Ye_are_the_light_of_the_world._A_city_that_is_set_on_an_hill_cannot_be_hid.\n_15_Neither_do_men_light_a_candle,_and_put_it_under_a_bushel,_but_on_a_candlestick;_and_it_giveth_light_unto_all_that_are_in_the_house.\n_16_Let_your_light_so_shine_before_men,_that_they_may_see_your_good_works,_and_glorify_your_Father_which_is_in_heaven.
+
+Scripture.Mat6@24.ref = Matthew_6@24
+Scripture.Mat6@24.question =q6
+Scripture.Mat6@24.KJV.text = 24_No_man_can_serve_two_masters:_for_either_he_will_hate_the_one,_and_love_the_other;_or_else_he_will_hold_to_the_one,_and_despise_the_other._Ye_cannot_serve_God_and_mammon.
+
+Scripture.Mat16@15-19.ref = Matthew_16@15-19
+Scripture.Mat16@15-19.question =q6
+Scripture.Mat16@15-19.KJV.text = 15_He_saith_unto_them,_But_whom_say_ye_that_I_am?\n_16_And_Simon_Peter_answered_and_said,_Thou_art_the_Christ,_the_Son_of_the_living_God.\n_17_And_Jesus_answered_and_said_unto_him,_Blessed_art_thou,_Simon_Barjona:_for_flesh_and_blood_hath_not_revealed_it_unto_thee,_but_my_Father_which_is_in_heaven.\n_18_And_I_say_also_unto_thee,_That_thou_art_Peter,_and_upon_this_rock_I_will_build_my_church;_and_the_gates_of_hell_shall_not_prevail_against_it.\n_19_And_I_will_give_unto_thee_the_keys_of_the_kingdom_of_heaven:_and_whatsoever_thou_shalt_bind_on_earth_shall_be_bound_in_heaven:_and_whatsoever_thou_shalt_loose_on_earth_shall_be_loosed_in_heaven.
+
+Scripture.Mat25@40.ref = Matthew_25@40
+Scripture.Mat25@40.question =q6
+Scripture.Mat25@40.KJV.text = 40_And_the_King_shall_answer_and_say_unto_them,_Verily_I_say_unto_you,_Inasmuch_as_ye_have_done_it_unto_one_of_the_least_of_these_my_brethren,_ye_have_done_it_unto_me.
+
+Scripture.Luk24@36-39.ref = Luke_24@36-39
+Scripture.Luk24@36-39.question =q6
+Scripture.Luk24@36-39.KJV.text = 36_¶_And_as_they_thus_spake,_Jesus_himself_stood_in_the_midst_of_them,_and_saith_unto_them,_Peace_be_unto_you.\n_37_But_they_were_terrified_and_affrighted,_and_supposed_that_they_had_seen_a_spirit.\n_38_And_he_said_unto_them,_Why_are_ye_troubled?_and_why_do_thoughts_arise_in_your_hearts?\n_39_Behold_my_hands_and_my_feet,_that_it_is_I_myself:_handle_me,_and_see;_for_a_spirit_hath_not_flesh_and_bones,_as_ye_see_me_have.
+
+Scripture.Jhn3@5.ref = John_3@5
+Scripture.Jhn3@5.question =q6
+Scripture.Jhn3@5.KJV.text = 5_Jesus_answered,_Verily,_verily,_I_say_unto_thee,_Except_a_man_be_born_of_water_and_of_the_Spirit,_he_cannot_enter_into_the_kingdom_of_God.
+
+Scripture.Jhn7@17.ref = John_7@17
+Scripture.Jhn7@17.question =q6
+Scripture.Jhn7@17.KJV.text = 17_If_any_man_will_do_his_will,_he_shall_know_of_the_doctrine,_whether_it_be_of_God,_or_whether_I_speak_of_myself.
+
+Scripture.Jhn10@16.ref = John_10@16
+Scripture.Jhn10@16.question =q6
+Scripture.Jhn10@16.KJV.text = 16_And_other_sheep_I_have,_which_are_not_of_this_fold:_them_also_I_must_bring,_and_they_shall_hear_my_voice;_and_there_shall_be_one_fold,_and_one_shepherd.
+
+Scripture.Jhn14@15.ref = John_14@15
+Scripture.Jhn14@15.question =q6
+Scripture.Jhn14@15.KJV.text = 15_¶_If_ye_love_me,_keep_my_commandments.
+
+Scripture.Jhn17@3.ref = John_17@3
+Scripture.Jhn17@3.question =q6
+Scripture.Jhn17@3.KJV.text = 3_And_this_is_life_eternal,_that_they_might_know_thee_the_only_true_God,_and_Jesus_Christ,_whom_thou_hast_sent.
+
+Scripture.Act7@55-56.ref = Acts_7@55-56
+Scripture.Act7@55-56.question =q6
+Scripture.Act7@55-56.KJV.text = 55_But_he,_being_full_of_the_Holy_Ghost,_looked_up_stedfastly_into_heaven,_and_saw_the_glory_of_God,_and_Jesus_standing_on_the_right_hand_of_God,\n56_And_said,_Behold,_I_see_the_heavens_opened,_and_the_Son_of_man_standing_on_the_right_hand_of_God.
+
+Scripture.Rom1@16.ref = Romans_1@16
+Scripture.Rom1@16.question =q6
+Scripture.Rom1@16.KJV.text = 16_¶_For_I_am_not_ashamed_of_the_gospel_of_Christ:_for_it_is_the_power_of_God_unto_salvation_to_every_one_that_believeth;_to_the_Jew_first,_and_also_to_the_Greek.
+
+Scripture.1Cor10@13.ref = 1_Corinthians_10@13
+Scripture.1Cor10@13.question =q6
+Scripture.1Cor10@13.KJV.text = 13_There_hath_no_temptation_taken_you_but_such_as_is_common_to_man:_but_God_is_faithful,_who_will_not_suffer_you_to_be_tempted_above_that_ye_are_able;_but_will_with_the_temptation_also_make_a_way_to_escape,_that_ye_may_be_able_to_bear_it.
+
+Scripture.1Cor15@20-22.ref = 1_Corinthians_15@20-22
+Scripture.1Cor15@20-22.question =q6
+Scripture.1Cor15@20-22.KJV.text = 20_¶_But_now_is_Christ_risen_from_the_dead,_[and]_become_the_firstfruits_of_them_that_slept.\n_21_For_since_by_man_[came]_death,_by_man_[came]_also_the_resurrection_of_the_dead.\n_22_For_as_in_Adam_all_die,_even_so_in_Christ_shall_all_be_made_alive.
+
+Scripture.1Cor15@29.ref = 1_Corinthians_15@29
+Scripture.1Cor15@29.question =q6
+Scripture.1Cor15@29.KJV.text = 29_Else_what_shall_they_do_which_are_baptized_for_the_dead,_if_the_dead_rise_not_at_all?_why_are_they_then_baptized_for_the_dead?
+
+Scripture.1Cor15@40-42.ref = 1_Corinthians_15@40-42
+Scripture.1Cor15@40-42.question =q6
+Scripture.1Cor15@40-42.KJV.text = 40_There_are_also_celestial_bodies,_and_bodies_terrestrial:_but_the_glory_of_the_celestial_is_one,_and_the_glory_of_the_terrestrial_is_another.\n_41_There_is_one_glory_of_the_sun,_and_another_glory_of_the_moon,_and_another_glory_of_the_stars:_for_one_star_differeth_from_another_star_in_glory.
+
+Scripture.Eph4@11-14.ref = Ephesians_4@11-14
+Scripture.Eph4@11-14.question =q6
+Scripture.Eph4@11-14.KJV.text = 11_And_he_gave_some,_apostles;_and_some,_prophets;_and_some,_evangelists;_and_some,_pastors_and_teachers;\n12_For_the_perfecting_of_the_saints,_for_the_work_of_the_ministry,_for_the_edifying_of_the_body_of_Christ:\n13_Till_we_all_come_in_the_unity_of_the_faith,_and_of_the_knowledge_of_the_Son_of_God,_unto_a_perfect_man,_unto_the_measure_of_the_stature_of_the_fulness_of_Christ:\n14_That_we_[henceforth]_be_no_more_children,_tossed_to_and_fro,_and_carried_about_with_every_wind_of_doctrine,_by_the_sleight_of_men,_[and]_cunning_craftiness,_whereby_they_lie_in_wait_to_deceive;
+
+Scripture.2Ths2@1-3.ref = 2_Thessalonians_2@1-3
+Scripture.2Ths2@1-3.question =q6
+Scripture.2Ths2@1-3.KJV.text = 1_¶_NOW_we_beseech_you,_brethren,_by_the_coming_of_our_Lord_Jesus_Christ,_and_by_our_gathering_together_unto_him,\n2_That_ye_be_not_soon_shaken_in_mind,_or_be_troubled,_neither_by_spirit,_nor_by_word,_nor_by_letter_as_from_us,_as_that_the_day_of_Christ_is_at_hand.\n_3_¶_Let_no_man_deceive_you_by_any_means:_for_that_day_shall_not_come,_except_there_come_a_falling_away_first,_and_that_man_of_sin_be_revealed,_the_son_of_perdition;
+
+Scripture.2Tim3@1-5.ref = 2_Timothy_3@1-5
+Scripture.2Tim3@1-5.question =q6
+Scripture.2Tim3@1-5.KJV.text = 1_¶_THIS_know_also,_that_in_the_last_days_perilous_times_shall_come.\n_2_For_men_shall_be_lovers_of_their_own_selves,_covetous,_boasters,_proud,_blasphemers,_disobedient_to_parents,_unthankful,_unholy,\n3_Without_natural_affection,_trucebreakers,_false_accusers,_incontinent,_fierce,_despisers_of_those_that_are_good,\n4_Traitors,_heady,_highminded,_lovers_of_pleasures_more_than_lovers_of_God;\n5_Having_a_form_of_godliness,_but_denying_the_power_thereof:_from_such_turn_away.
+
+Scripture.2Tim3@16-17.ref = 2_Timothy_3@16-17
+Scripture.2Tim3@16-17.question =q6
+Scripture.2Tim3@16-17.KJV.text = 16_All_scripture_[is]_given_by_inspiration_of_God,_and_[is]_profitable_for_doctrine,_for_reproof,_for_correction,_for_instruction_in_righteousness:\n17_That_the_man_of_God_may_be_perfect,_throughly_furnished_unto_all_good_works.
+
+Scripture.Heb5@4.ref = Hebrews_5@4
+Scripture.Heb5@4.question =q6
+Scripture.Heb5@4.KJV.text = 4_And_no_man_taketh_this_honour_unto_himself,_but_he_that_is_called_of_God,_as_was_Aaron.
+
+Scripture.Jas1@5-6.ref = James_1@5-6
+Scripture.Jas1@5-6.question =q6
+Scripture.Jas1@5-6.KJV.text = 5_If_any_of_you_lack_wisdom,_let_him_ask_of_God,_that_giveth_to_all_men_liberally,_and_upbraideth_not;_and_it_shall_be_given_him.\n_6_But_let_him_ask_in_faith,_nothing_wavering._For_he_that_wavereth_is_like_a_wave_of_the_sea_driven_with_the_wind_and_tossed.
+
+Scripture.Jas2@17-18.ref = James_2@17-18
+Scripture.Jas2@17-18.question =q2
+Scripture.Jas2@17-18.KJV.text = 17_Even_so_faith,_if_it_hath_not_works,_is_dead,_being_alone.\n_18_Yea,_a_man_may_say,_Thou_hast_faith,_and_I_have_works:_shew_me_thy_faith_without_thy_works,_and_I_will_shew_thee_my_faith_by_my_works.
+
+Scripture.Rev14@6-7.ref = Revelation_14@6-7
+Scripture.Rev14@6-7.question =q6
+Scripture.Rev14@6-7.KJV.text = 6_¶_And_I_saw_another_angel_fly_in_the_midst_of_heaven,_having_the_everlasting_gospel_to_preach_unto_them_that_dwell_on_the_earth,_and_to_every_nation,_and_kindred,_and_tongue,_and_people,\n7_Saying_with_a_loud_voice,_Fear_God,_and_give_glory_to_him;_for_the_hour_of_his_judgment_is_come:_and_worship_him_that_made_heaven,_and_earth,_and_the_sea,_and_the_fountains_of_waters.
+
+Scripture.Rev20@12-13.ref = Revelation_20@12-13
+Scripture.Rev20@12-13.question =q6
+Scripture.Rev20@12-13.KJV.text = 12_And_I_saw_the_dead,_small_and_great,_stand_before_God;_and_the_books_were_opened:_and_another_book_was_opened,_which_is_the_book_of_life:_and_the_dead_were_judged_out_of_those_things_which_were_written_in_the_books,_according_to_their_works.\n_13_And_the_sea_gave_up_the_dead_which_were_in_it;_and_death_and_hell_delivered_up_the_dead_which_were_in_them:_and_they_were_judged_every_man_according_to_their_works.
+
+Doctrine_and_Covenants
+
+Scripture.JSH1@15-20.ref = Joseph_Smith_History_1@15-20
+Scripture.JSH1@15-20.question =q6
+Scripture.JSH1@15-20.KJV.text = 15_After_I_had_retired_to_the_place_where_I_had_previously_designed_to_go,_having_looked_around_me,_and_finding_myself_alone,_I_kneeled_down_and_began_to_offer_up_the_desires_of_my_heart_to_God._I_had_scarcely_done_so,_when_immediately_I_was_seized_upon_by_some_power_which_entirely_overcame_me,_and_had_such_an_astonishing_influence_over_me_as_to_bind_my_tongue_so_that_I_could_not_speak._Thick_darkness_gathered_around_me,_and_it_seemed_to_me_for_a_time_as_if_I_were_doomed_to_sudden_destruction.\n_16_But,_exerting_all_my_powers_to_call_upon_God_to_deliver_me_out_of_the_power_of_this_enemy_which_had_seized_upon_me,_and_at_the_very_moment_when_I_was_ready_to_sink_into_despair_and_abandon_myself_to_destruction--not_to_an_imaginary_ruin,_but_to_the_power_of_some_actual_being_from_the_unseen_world,_who_had_such_marvelous_power_as_I_had_never_before_felt_in_any_being--just_at_this_moment_of_great_alarm,_I_saw_a_pillar_of_light_exactly_over_my_head,_above_the_brightness_of_the_sun,_which_descended_gradually_until_it_fell_upon_me.\n_17_It_no_sooner_appeared_than_I_found_myself_delivered_from_the_enemy_which_held_me_bound._When_the_light_rested_upon_me_I_saw_two_Personages,_whose_brightness_and_glory_defy_all_description,_standing_above_me_in_the_air._One_of_them_spake_unto_me,_calling_me_by_name_and_said,_pointing_to_the_other--This_is_My_Beloved_Son._Hear_Him!\n_18_My_object_in_going_to_inquire_of_the_Lord_was_to_know_which_of_all_the_sects_was_right,_that_I_might_know_which_to_join._No_sooner,_therefore,_did_I_get_possession_of_myself,_so_as_to_be_able_to_speak,_than_I_asked_the_Personages_who_stood_above_me_in_the_light,_which_of_all_the_sects_was_right_(for_at_this_time_it_had_never_entered_into_my_heart_that_all_were_wrong)--and_which_I_should_join.\n_19_I_was_answered_that_I_must_join_none_of_them,_for_they_were_all_wrong;_and_the_Personage_who_addressed_me_said_that_all_their_creeds_were_an_abomination_in_his_sight;_that_those_professors_were_all_corrupt;_that:_"they_draw_near_to_me_with_their_lips,_but_their_hearts_are_far_from_me,_they_teach_for_doctrines_the_commandments_of_men,_having_a_form_of_godliness,_but_they_deny_the_power_thereof."\n20_He_again_forbade_me_to_join_with_any_of_them;_and_many_other_things_did_he_say_unto_me,_which_I_cannot_write_at_this_time._When_I_came_to_myself_again,_I_found_myself_lying_on_my_back,_looking_up_into_heaven._When_the_light_had_departed,_I_had_no_strength;_but_soon_recovering_in_some_degree,_I_went_home._And_as_I_leaned_up_to_the_fireplace,_mother_inquired_what_the_matter_was._I_replied,_"Never_mind,_all_is_well--I_am_well_enough_off."_I_then_said_to_my_mother,_"I_have_learned_for_myself_that_Presbyterianism_is_not_true."_It_seems_as_though_the_adversary_was_aware,_at_a_very_early_period_of_my_life,_that_I_was_destined_to_prove_a_disturber_and_an_annoyer_of_his_kingdom;_else_why_should_the_powers_of_darkness_combine_against_me?_Why_the_opposition_and_persecution_that_arose_against_me,_almost_in_my_infancy?
+
+Scripture.D&C1@37-38.ref = Doctrine_and_Covenants_1@37-38
+Scripture.D&C1@37-38.question =q6
+Scripture.D&C1@37-38.KJV.text = 37_Search_these_commandments,_for_they_are_true_and_faithful,_and_the_prophecies_and_promises_which_are_in_them_shall_all_be_fulfilled.\n_38_What_I_the_Lord_have_spoken,_I_have_spoken,_and_I_excuse_not_myself;_and_though_the_heavens_and_the_earth_pass_away,_my_word_shall_not_pass_away,_but_shall_all_be_fulfilled,_whether_by_mine_own_voice_or_by_the_voice_of_my_servants,_it_is_the_same.
+
+Scripture.D&C8@2-3.ref = Doctrine_and_Covenants_8@2-3
+Scripture.D&C8@2-3.question =q6
+Scripture.D&C8@2-3.KJV.text = 2_Yea,_behold,_I_will_tell_you_in_your_mind_and_in_your_heart,_by_the_Holy_Ghost,_which_shall_come_upon_you_and_which_shall_dwell_in_your_heart.\n_3_Now,_behold,_this_is_the_spirit_of_revelation;_behold,_this_is_the_spirit_by_which_Moses_brought_the_children_of_Israel_through_the_Red_Sea_on_dry_ground.
+
+Scripture.D&C10@5.ref = Doctrine_and_Covenants_10@5
+Scripture.D&C10@5.question =q6
+Scripture.D&C10@5.KJV.text = 5_Pray_always,_that_you_may_come_off_conqueror;_yea,_that_you_may_conquer_Satan,_and_that_you_may_escape_the_hands_of_the_servants_of_Satan_that_do_uphold_his_work.
+
+Scripture.D&C14@7.ref = Doctrine_and_Covenants_14@7
+Scripture.D&C14@7.question =q6
+Scripture.D&C14@7.KJV.text = 7_And,_if_you_keep_my_commandments_and_endure_to_the_end_you_shall_have_eternal_life,_which_gift_is_the_greatest_of_all_the_gifts_of_God.
+
+Scripture.D&C18@10,_15-16.ref = Doctrine_and_Covenants_18@10,_15-16
+Scripture.D&C18@10,_15-16.question =q6
+Scripture.D&C18@10,_15-16.KJV.text = 10_Remember_the_worth_of_souls_is_great_in_the_sight_of_God;\n15_And_if_it_so_be_that_you_should_labor_all_your_days_in_crying_repentance_unto_this_people,_and_bring,_save_it_be_one_soul_unto_me,_how_great_shall_be_your_joy_with_him_in_the_kingdom_of_my_Father!\n_16_And_now,_if_your_joy_will_be_great_with_one_soul_that_you_have_brought_unto_me_into_the_kingdom_of_my_Father,_how_great_will_be_your_joy_if_you_should_bring_many_souls_unto_me!
+
+Scripture.D&C19@16-19.ref = Doctrine_and_Covenants_19@16-19
+Scripture.D&C19@16-19.question =q6
+Scripture.D&C19@16-19.KJV.text = 16_For_behold,_I,_God,_have_suffered_these_things_for_all,_that_they_might_not_suffer_if_they_would_repent;\n17_But_if_they_would_not_repent_they_must_suffer_even_as_I;\n18_Which_suffering_caused_myself,_even_God,_the_greatest_of_all,_to_tremble_because_of_pain,_and_to_bleed_at_every_pore,_and_to_suffer_both_body_and_spirit--and_would_that_I_might_not_drink_the_bitter_cup,_and_shrink--\n19_Nevertheless,_glory_be_to_the_Father,_and_I_partook_and_finished_my_preparations_unto_the_children_of_men.
+
+Scripture.D&C25@12.ref = Doctrine_and_Covenants_25@12
+Scripture.D&C25@12.question =q6
+Scripture.D&C25@12.KJV.text = 12_For_my_soul_delighteth_in_the_song_of_the_heart;_yea,_the_song_of_the_righteous_is_a_prayer_unto_me,_and_it_shall_be_answered_with_a_blessing_upon_their_heads.
+
+Scripture.D&C58@26-27.ref = Doctrine_and_Covenants_58@26-27
+Scripture.D&C58@26-27.question =q6
+Scripture.D&C58@26-27.KJV.text = 26_For_behold,_it_is_not_meet_that_I_should_command_in_all_things;_for_he_that_is_compelled_in_all_things,_the_same_is_a_slothful_and_not_a_wise_servant;_wherefore_he_receiveth_no_reward.\n_27_Verily_I_say,_men_should_be_anxiously_engaged_in_a_good_cause,_and_do_many_things_of_their_own_free_will,_and_bring_to_pass_much_righteousness;
+
+Scripture.D&C58@42-43.ref = Doctrine_and_Covenants_58@42-43
+Scripture.D&C58@42-43.question =q6
+Scripture.D&C58@42-43.KJV.text = 42_Behold,_he_who_has_repented_of_his_sins,_the_same_is_forgiven,_and_I,_the_Lord,_remember_them_no_more.\n_43_By_this_ye_may_know_if_a_man_repenteth_of_his_sins--behold,_he_will_confess_them_and_forsake_them.
+
+Scripture.D&C59@9-10.ref = Doctrine_and_Covenants_59@9-10
+Scripture.D&C59@9-10.question =q6
+Scripture.D&C59@9-10.KJV.text = 9_And_that_thou_mayest_more_fully_keep_thyself_unspotted_from_the_world,_thou_shalt_go_to_the_house_of_prayer_and_offer_up_thy_sacraments_upon_my_holy_day;\n10_For_verily_this_is_a_day_appointed_unto_you_to_rest_from_your_labors,_and_to_pay_thy_devotions_unto_the_Most_High;
+
+Scripture.D&C64@9-11.ref = Doctrine_and_Covenants_64@9-11
+Scripture.D&C64@9-11.question =q6
+Scripture.D&C64@9-11.KJV.text = 9_Wherefore,_I_say_unto_you,_that_ye_ought_to_forgive_one_another;_for_he_that_forgiveth_not_his_brother_his_trespasses_standeth_condemned_before_the_Lord;_for_there_remaineth_in_him_the_greater_sin.\n_10_I,_the_Lord,_will_forgive_whom_I_will_forgive,_but_of_you_it_is_required_to_forgive_all_men.\n_11_And_ye_ought_to_say_in_your_hearts--let_God_judge_between_me_and_thee,_and_reward_thee_according_to_thy_deeds.
+
+Scripture.D&C64@23.ref = Doctrine_and_Covenants_64@23
+Scripture.D&C64@23.question =q6
+Scripture.D&C64@23.KJV.text = 23_Behold,_now_it_is_called_today_until_the_coming_of_the_Son_of_Man,_and_verily_it_is_a_day_of_sacrifice,_and_a_day_for_the_tithing_of_my_people;_for_he_that_is_tithed_shall_not_be_burned_at_his_coming.
+
+Scripture.D&C76@22-24.ref = Doctrine_and_Covenants_76@22-24
+Scripture.D&C76@22-24.question =q6
+Scripture.D&C76@22-24.KJV.text = 22_And_now,_after_the_many_testimonies_which_have_been_given_of_him,_this_is_the_testimony,_last_of_all_which_we_give_of_him:_That_he_lives!\n_23_For_we_saw_him,_even_on_the_right_hand_of_God;_and_we_heard_the_voice_bearing_record_that_he_is_the_Only_Begotten_of_the_Father--\n24_That_by_him,_and_through_him,_and_of_him,_the_worlds_are_and_were_created,_and_the_inhabitants_thereof_are_begotten_sons_and_daughters_unto_God.
+
+Scripture.D&C82@3.ref = Doctrine_and_Covenants_82@3
+Scripture.D&C82@3.question =q6
+Scripture.D&C82@3.KJV.text = 3_For_of_him_unto_whom_much_is_given_much_is_required;_and_he_who_sins_against_the_greater_light_shall_receive_the_greater_condemnation.
+
+Scripture.D&C82@10.ref = Doctrine_and_Covenants_82@10
+Scripture.D&C82@10.question =q6
+Scripture.D&C82@10.KJV.text = 10_I,_the_Lord,_am_bound_when_ye_do_what_I_say;_but_when_ye_do_not_what_I_say,_ye_have_no_promise.
+
+Scripture.D&C84@33-39.ref = Doctrine_and_Covenants_84@33-39
+Scripture.D&C84@33-39.question =q6
+Scripture.D&C84@33-39.KJV.text = 33_For_whoso_is_faithful_unto_the_obtaining_these_two_priesthoods_of_which_I_have_spoken,_and_the_magnifying_their_calling,_are_sanctified_by_the_Spirit_unto_the_renewing_of_their_bodies.\n_34_They_become_the_sons_of_Moses_and_of_Aaron_and_the_seed_of_Abraham,_and_the_church_and_kingdom,_and_the_elect_of_God.\n_35_And_also_all_they_who_receive_this_priesthood_receive_me,_saith_the_Lord;\n36_For_he_that_receiveth_my_servants_receiveth_me;\n37_And_he_that_receiveth_me_receiveth_my_Father;\n38_And_he_that_receiveth_my_Father_receiveth_my_Father's_kingdom;_therefore_all_that_my_Father_hath_shall_be_given_unto_him.\n_39_And_this_is_according_to_the_oath_and_covenant_which_belongeth_to_the_priesthood.
+
+Scripture.D&C88@123-24.ref = Doctrine_and_Covenants_88@123-24
+Scripture.D&C88@123-24.question =q6
+Scripture.D&C88@123-24.KJV.text = 123_See_that_ye_love_one_another;_cease_to_be_covetous;_learn_to_impart_one_to_another_as_the_gospel_requires.\n_124_Cease_to_be_idle;_cease_to_be_unclean;_cease_to_find_fault_one_with_another;_cease_to_sleep_longer_than_is_needful;_retire_to_thy_bed_early,_that_ye_may_not_be_weary;_arise_early,_that_your_bodies_and_your_minds_may_be_invigorated.
+
+Scripture.D&C89@18-21.ref = Doctrine_and_Covenants_89@18-21
+Scripture.D&C89@18-21.question =q6
+Scripture.D&C89@18-21.KJV.text = 18_And_all_saints_who_remember_to_keep_and_do_these_sayings,_walking_in_obedience_to_the_commandments,_shall_receive_health_in_their_navel_and_marrow_to_their_bones;\n19_And_shall_find_wisdom_and_great_treasures_of_knowledge,_even_hidden_treasures;\n20_And_shall_run_and_not_be_weary,_and_shall_walk_and_not_faint.\n_21_And_I,_the_Lord,_give_unto_them_a_promise,_that_the_destroying_angel_shall_pass_by_them,_as_the_children_of_Israel,_and_not_slay_them._Amen.
+
+Scripture.D&C121@34-36.ref = Doctrine_and_Covenants_121@34-36
+Scripture.D&C121@34-36.question =q6
+Scripture.D&C121@34-36.KJV.text = 34_Behold,_there_are_many_called,_but_few_are_chosen._And_why_are_they_not_chosen?\n_35_Because_their_hearts_are_set_so_much_upon_the_things_of_this_world,_and_aspire_to_the_honors_of_men,_that_they_do_not_learn_this_one_lesson--\n36_That_the_rights_of_the_priesthood_are_inseparably_connected_with_the_powers_of_heaven,_and_that_the_powers_of_heaven_cannot_be_controlled_nor_handled_only_upon_the_principles_of_righteousness.
+
+Scripture.D&C130@18-19.ref = Doctrine_and_Covenants_130@18-19
+Scripture.D&C130@18-19.question =q6
+Scripture.D&C130@18-19.KJV.text = 18_Whatever_principle_of_intelligence_we_attain_unto_in_this_life,_it_will_rise_with_us_in_the_resurrection.\n_19_And_if_a_person_gains_more_knowledge_and_intelligence_in_this_life_through_his_diligence_and_obedience_than_another,_he_will_have_so_much_the_advantage_in_the_world_to_come.
+
+Scripture.D&C130@20-21.ref = Doctrine_and_Covenants_130@20-21
+Scripture.D&C130@20-21.question =q6
+Scripture.D&C130@20-21.KJV.text = 20_There_is_a_law,_irrevocably_decreed_in_heaven_before_the_foundations_of_this_world,_upon_which_all_blessings_are_predicated--\n21_And_when_we_obtain_any_blessing_from_God,_it_is_by_obedience_to_that_law_upon_which_it_is_predicated.
+
+Scripture.D&C130@22-23.ref = Doctrine_and_Covenants_130@22-23
+Scripture.D&C130@22-23.question =q6
+Scripture.D&C130@22-23.KJV.text = 22_The_Father_has_a_body_of_flesh_and_bones_as_tangible_as_man's;_the_Son_also;_but_the_Holy_Ghost_has_not_a_body_of_flesh_and_bones,_but_is_a_personage_of_Spirit._Were_it_not_so,_the_Holy_Ghost_could_not_dwell_in_us.\n_23_A_man_may_receive_the_Holy_Ghost,_and_it_may_descend_upon_him_and_not_tarry_with_him.
+
+Scripture.D&C131@1-4.ref = Doctrine_and_Covenants_131@1-4
+Scripture.D&C131@1-4.question =q6
+Scripture.D&C131@1-4.KJV.text = 1_IN_the_celestial_glory_there_are_three_heavens_or_degrees;\n2_And_in_order_to_obtain_the_highest,_a_man_must_enter_into_this_order_of_the_priesthood_[meaning_the_new_and_everlasting_covenant_of_marriage];\n3_And_if_he_does_not,_he_cannot_obtain_it.\n_4_He_may_enter_into_the_other,_but_that_is_the_end_of_his_kingdom;_he_cannot_have_an_increase.
+
+Scripture.D&C137@7-10.ref = Doctrine_and_Covenants_137@7-10
+Scripture.D&C137@7-10.question =q6
+Scripture.D&C137@7-10.KJV.text = 7_Thus_came_the_voice_of_the_Lord_unto_me,_saying:_All_who_have_died_without_a_knowledge_of_this_gospel,_who_would_have_received_it_if_they_had_been_permitted_to_tarry,_shall_be_heirs_of_the_celestial_kingdom_of_God;\n8_Also_all_that_shall_die_henceforth_without_a_knowledge_of_it,_who_would_have_received_it_with_all_their_hearts,_shall_be_heirs_of_that_kingdom;\n9_For_I,_the_Lord,_will_judge_all_men_according_to_their_works,_according_to_the_desire_of_their_hearts.\n_10_And_I_also_beheld_that_all_children_who_die_before_they_arrive_at_the_years_of_accountability_are_saved_in_the_celestial_kingdom_of_heaven.
+
