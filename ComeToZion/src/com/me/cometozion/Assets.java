@@ -42,14 +42,11 @@ public class Assets {
 	public static TiledMap map;
 	public static TextureAtlas atlas;
 	public static Skin skin;
-	//public static Vector<Sound> sounds = new Vector<Sound>();
 	public static HashMap< String, Vector<Sound> > sounds = new HashMap< String, Vector<Sound> >();
 
 	public static TextureRegion pureWhiteTextureRegion;
 
 	public static HashMap<String, HashMap<String, Animation[]> > animations;
-	//public static Map<String, Object> animationy;
-	public static Animation robotWalkingRightAnimation;
 	
 	public static BitmapFont scoreFont;
 	public static BitmapFont textFont;
