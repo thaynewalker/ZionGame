@@ -193,22 +193,37 @@
   <object x="3235" y="4477">
    <polygon points="0,0 -33,-42 -33,-167 222,-172 220,-40 187,0"/>
   </object>
-  <object name="cash" type="object" x="250" y="3694" width="39" height="20">
+  <object name="cash" type="30" x="250" y="3694" width="21" height="20">
    <ellipse/>
   </object>
-  <object name="cash" type="object" x="2324" y="4353" width="39" height="20">
+  <object name="cash" type="6" x="2324" y="4353" width="21" height="21">
    <ellipse/>
   </object>
-  <object name="cash" type="object" x="3316" y="4106" width="39" height="20">
+  <object name="cash" type="5" x="3316" y="4106" width="22" height="19">
    <ellipse/>
   </object>
-  <object name="cash" type="object" x="3685" y="2938" width="39" height="20">
+  <object name="cash" type="object" x="3685" y="2938" width="20" height="20">
    <ellipse/>
   </object>
-  <object name="cash" type="object" x="3283" y="1966" width="39" height="20">
+  <object name="cash" type="12" x="3283" y="1966" width="23" height="21">
    <ellipse/>
   </object>
-  <object name="cash" type="object" x="2290" y="1905" width="39" height="20">
+  <object name="cash" type="18" x="2290" y="1905" width="22" height="21">
+   <ellipse/>
+  </object>
+  <object name="scroll" type="Isa1@18" x="3377" y="4108" width="21" height="21">
+   <ellipse/>
+  </object>
+  <object name="scroll" type="2Ne2@25" x="3025" y="3395" width="21" height="21">
+   <ellipse/>
+  </object>
+  <object name="scroll" type="1Ne2@27" x="4607" y="436" width="21" height="21">
+   <ellipse/>
+  </object>
+  <object name="scroll" type="2Ne2@25" x="3088" y="538" width="21" height="21">
+   <ellipse/>
+  </object>
+  <object name="scroll" type="Jhn14@15" x="135" y="1940" width="21" height="21">
    <ellipse/>
   </object>
  </objectgroup>
