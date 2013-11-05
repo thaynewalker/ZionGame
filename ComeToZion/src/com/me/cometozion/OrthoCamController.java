@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
 public class OrthoCamController extends Stage {
@@ -16,13 +15,13 @@ public class OrthoCamController extends Stage {
         private final Vector3 delta = new Vector3();
         private final float width;
         private final float height;
-        private final Body mainBody;
+        private final ZionBody mainBody;
         
-        public OrthoCamController(OrthographicCamera camera, float width, float height, Body mainBody) {
+        public OrthoCamController(OrthographicCamera camera, float width, float height, ZionBody mainZionBody) {
                 this.camera = camera;
                 this.width = width;
                 this.height = height;
-                this.mainBody = mainBody;
+                this.mainBody = mainZionBody;
         }
 
         @Override

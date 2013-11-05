@@ -75,7 +75,7 @@ public class GameScreen implements Screen{
 		}
 	}
 	ComeToZionMain game;
-	private final ArrayList<Body> destroyList = new ArrayList<Body>();
+	private final ArrayList<ZionBody> destroyList = new ArrayList<ZionBody>();
 	
 	private final String TAG = "GameMap";
 	
@@ -89,10 +89,10 @@ public class GameScreen implements Screen{
 	private BodyDef southBorderDef;
 	private BodyDef eastBorderDef;
 	private BodyDef westBorderDef;
-	private Body northBorder;
-	private Body southBorder;
-	private Body eastBorder;
-	private Body westBorder;
+	private ZionBody northBorder;
+	private ZionBody southBorder;
+	private ZionBody eastBorder;
+	private ZionBody westBorder;
 	private PolygonShape north;
 	private PolygonShape south;
 	private PolygonShape east;
@@ -100,7 +100,7 @@ public class GameScreen implements Screen{
 
 	private String currentAction = "walk";
 	private BodyDef mainBodyDef;
-	private Body mainBody;
+	private ZionBody mainZionBody;
 	private FixtureDef fixtureDef;
 	private CircleShape mainShape;
 	private float rendersize;
@@ -116,26 +116,26 @@ public class GameScreen implements Screen{
 	{
 		this.northBorderDef = new BodyDef();
 		this.northBorderDef.position.set(game.width/2,game.height);
-		this.northBorder = world.createBody(northBorderDef);
+		this.northBorder = new ZionBody(world.createBody(northBorderDef));
 		this.north = new PolygonShape();
 		this.north.setAsBox(game.width/2, .1f);
 		this.northBorder.createFixture(north,0.0f);
 		this.southBorderDef = new BodyDef();
 		this.southBorderDef.position.set(game.width/2,0);
-		this.southBorder = world.createBody(southBorderDef);
+		this.southBorder = new ZionBody(world.createBody(southBorderDef));
 		this.south = new PolygonShape();
 		this.south.setAsBox(game.width/2, .1f);
 		this.southBorder.createFixture(south,0.0f);
 		this.eastBorderDef = new BodyDef();
 		this.eastBorderDef.position.set(game.width,game.height/2);
-		this.eastBorder = world.createBody(eastBorderDef);
+		this.eastBorder = new ZionBody(world.createBody(eastBorderDef));
 		
 		this.east = new PolygonShape();
 		this.east.setAsBox(.1f, game.height);
 		this.eastBorder.createFixture(east,0.0f);
 		this.westBorderDef = new BodyDef();
 		this.westBorderDef.position.set(0,game.height/2);
-		this.westBorder = world.createBody(westBorderDef);
+		this.westBorder = new ZionBody(world.createBody(westBorderDef));
 		this.west = new PolygonShape();
 		this.west.setAsBox(.1f,game.height);
 		this.westBorder.createFixture(west,0.0f);
@@ -145,7 +145,7 @@ public class GameScreen implements Screen{
 	
 	private TextureRegion getCurrentFrame(Animation[] animation)
 	{
-		Vector2 tmp = this.mainBody.getLinearVelocity();
+		Vector2 tmp = this.mainZionBody.getLinearVelocity();
 		float vel = (float) Math.sqrt(tmp.x*tmp.x+tmp.y*tmp.y);
 		//System.out.println(vel);
 		stateTime += vel/120.0f;
@@ -206,8 +206,8 @@ public class GameScreen implements Screen{
 		mainBodyDef.type = BodyType.DynamicBody;
 		mainBodyDef.position.set(75,29);
 		mainBodyDef.linearDamping = 0.5f; // simulate gravity
-		mainBody = world.createBody(mainBodyDef);
-		mainBody.setUserData("main");
+		mainZionBody = new ZionBody(world.createBody(mainBodyDef));
+		mainZionBody.setUserData("main");
 		mainShape = new CircleShape();
 		mainShape.setRadius(0.3f);
 		fixtureDef = new FixtureDef();
@@ -215,9 +215,9 @@ public class GameScreen implements Screen{
 		fixtureDef.density = 0.5f;
 		fixtureDef.friction = 0.0f;
 		fixtureDef.restitution = 0.0f;
-		mainBody.createFixture(fixtureDef);
+		mainZionBody.createFixture(fixtureDef);
 		this.createBorders();
-		cameraController = new OrthoCamController(game.camera,game.width,game.height,mainBody);
+		cameraController = new OrthoCamController(game.camera,game.width,game.height,mainZionBody);
         cameraController.addActor(table);
 
         Texture texture1 = new Texture(Gdx.files.internal("data/sprites/inven.png"));
@@ -332,7 +332,7 @@ public class GameScreen implements Screen{
 	            	//Gdx.app.log("test", "w: "+width+" x:"+robj.getRectangle().x+" "+this.px_to_local_scale+" ");
 	            	rdef.position.set(robj.getEllipse().x*Assets.px_to_local_scale+robj.getEllipse().width*Assets.px_to_local_scale/2,
 	            			robj.getEllipse().y*Assets.px_to_local_scale+robj.getEllipse().height*Assets.px_to_local_scale/2);
-	            	Body rbody = world.createBody(rdef);
+	            	ZionBody rbody = new ZionBody(world.createBody(rdef));
 	            	rbody.setUserData("npc");
 	            	CircleShape rshape = new CircleShape(); // TODO this needs to be disposed of
 	            	rshape.setRadius((robj.getEllipse().width+robj.getEllipse().height)*Assets.px_to_local_scale/4);
@@ -344,7 +344,7 @@ public class GameScreen implements Screen{
 	            	rbody.createFixture(rfdef);
 	            	Npc n = new Npc(robj.getName(),robj.getProperties().get("type").toString().split(":")[0].split(";"),robj.getProperties().get("type").toString().split(":")[1],rbody,0.4f);
 	            	n.spriteName = robj.getProperties().get("type").toString().split(":")[2];
-	            	GlobalData.npcs.put(rbody,n);
+	            	GlobalData.npcs.put(rbody.body,n);
 	            }      
 		}
 		for(Iterator<MapObject> mObjs = mObjects.iterator(); mObjs.hasNext();){
@@ -371,14 +371,10 @@ public class GameScreen implements Screen{
 	            	}
 	            	rdef.position.set(robj.getRectangle().x*Assets.px_to_local_scale+robj.getRectangle().width*Assets.px_to_local_scale/2,
 	            			robj.getRectangle().y*Assets.px_to_local_scale+robj.getRectangle().height*Assets.px_to_local_scale/2);
-	            	Body rbody = world.createBody(rdef);
+	            	ZionBody rbody = new ZionBody(world.createBody(rdef));
 	            	if(robj.getProperties().get("type") != null)
 	            	{
-	            		rbody.setUserData(robj.getName());
-	            	}
-	            	else
-	            	{
-	            		rbody.setUserData("static");
+	            		rbody.setUserData(robj);
 	            	}
 	            	
 	            	PolygonShape rshape = new PolygonShape(); // TODO this needs to be disposed of
@@ -398,15 +394,12 @@ public class GameScreen implements Screen{
 	            	//Gdx.app.log("test", "w: "+width+" x:"+robj.getRectangle().x+" "+this.px_to_local_scale+" ");
 	            	rdef.position.set(robj.getEllipse().x*Assets.px_to_local_scale+robj.getEllipse().width*Assets.px_to_local_scale/2,
 	            			robj.getEllipse().y*Assets.px_to_local_scale+robj.getEllipse().height*Assets.px_to_local_scale/2);
-	            	Body rbody = world.createBody(rdef);
+	            	ZionBody rbody = new ZionBody(world.createBody(rdef));
 	            	if(robj.getProperties().get("type") != null)
 	            	{
-	            		rbody.setUserData(robj.getName());
+	            		rbody.setUserData(robj);
 	            	}
-	            	else
-	            	{
-	            		rbody.setUserData("static");
-	            	}
+	            	
 	            	//rbody.setUserData("static");
 	            	CircleShape rshape = new CircleShape(); // TODO this needs to be disposed of
 	            	rshape.setRadius((robj.getEllipse().width+robj.getEllipse().height)*Assets.px_to_local_scale/4);
@@ -426,8 +419,8 @@ public class GameScreen implements Screen{
 	            	//Gdx.app.log("test", "w: "+game.width+" x:"+robj.getPolygon().getX()*this.px_to_local_scale+" ");
 	            	//rdef.position.set(robj.getPolygon().getX()*this.px_to_local_scale,robj.getPolygon().getY()*this.px_to_local_scale);
 	            	
-	            	Body rbody = world.createBody(rdef);
-	            	rbody.setUserData("static");
+	            	ZionBody rbody = new ZionBody(world.createBody(rdef));
+	            	rbody.setUserData(robj);
 	            	PolygonShape rshape = new PolygonShape(); // TODO this needs to be disposed of
 	            	float[] f = robj.getPolygon().getTransformedVertices();
 	            	Vector2[] v = new Vector2[f.length/2];
@@ -453,28 +446,30 @@ public class GameScreen implements Screen{
 
             @Override
             public void beginContact(Contact contact) {
-            	Body mainguy = null;
-            	Body npc = null;
-                Body bodyA = contact.getFixtureA().getBody();
-                Body bodyB = contact.getFixtureB().getBody();
-                Body thing = null;
-                if(bodyA.getUserData() == "npc")
+            	if(contact.getFixtureA() == null || contact.getFixtureB() == null)
+            		return;
+            	ZionBody mainguy = null;
+            	ZionBody npc = null;
+                ZionBody bodyA = new ZionBody(contact.getFixtureA().getBody());
+                ZionBody bodyB = new ZionBody(contact.getFixtureB().getBody());
+                ZionBody thing = null;
+                if(bodyA.toString() == "npc")
                 	npc = bodyA;
-                if(bodyB.getUserData() == "npc")
+                if(bodyB.toString() == "npc")
                 	npc = bodyB;
-                if(bodyA.getUserData() == "main")
+                if(bodyA.toString() == "main")
                 	mainguy = bodyA;
-                if(bodyB.getUserData() == "main")
+                if(bodyB.toString() == "main")
                 	mainguy = bodyB;
                 if(bodyA != npc && bodyA != mainguy)
                 	thing = bodyA;
                 if(bodyB != npc && bodyB != mainguy)
                 	thing = bodyB;
                 
-                Gdx.app.log("beginContact", "between " + bodyA.getUserData() + " and " + bodyB.getUserData());
+                Gdx.app.log("beginContact", "between " + bodyA.toString() + " and " + bodyB.toString());
                 if(mainguy != null)
                 {
-                	//Gdx.app.log(TAG, "Obj:"+contact.getFixtureA().getBody().getUserData()+" "+contact.getFixtureB().getBody());
+                	//Gdx.app.log(TAG, "Obj:"+contact.getFixtureA().getZionBody().getUserData()+" "+contact.getFixtureB().getZionBody());
                 	if(!mainguy.getLinearVelocity().epsilonEquals(0f, 0f, .01f))
                 	{
                 		GlobalData.life -= stateTime/50f;
@@ -483,13 +478,13 @@ public class GameScreen implements Screen{
                 	}
                 	if(npc != null)
                 	{
-                		Npc n = GlobalData.npcs.get(npc);
+                		Npc n = GlobalData.npcs.get(npc.body);
                 		n.currentAction = "talk";
                 		currentAction = "talk";
                 		Assets.playSound("talk");
                 		int numdirs =n.animations.get(n.currentAction).length;
                 		Vector2 tmp = n.position();
-                		tmp.sub(mainBody.getPosition());
+                		tmp.sub(mainZionBody.getPosition());
                 		picnum = numdirs-((int) Math.round((Math.atan2(tmp.y,tmp.x)*(72f/numdirs)/Math.PI+(numdirs+numdirs/4))%numdirs)%numdirs);
                 		if(picnum >= numdirs)
                 			picnum = 0;
@@ -500,11 +495,27 @@ public class GameScreen implements Screen{
                 	}
                 	if(thing != null)
                 	{
-                		System.out.println(thing.getUserData().toString());
-                		if(thing.getUserData().toString().contentEquals("cash"))
+                		if(thing.toString().contentEquals("cash"))
                 		{
                 			Assets.playSound("cash");
-                			GlobalData.cash += MathUtils.random(30);
+                			if(((MapObject)thing.getUserData()).getProperties().get("type") != null)
+                			{
+                				GlobalData.cash += Integer.parseInt(((MapObject)thing.getUserData()).getProperties().get("type").toString());
+                			}
+                			else
+                			{
+                				GlobalData.cash += MathUtils.random(30);
+                			}
+                			destroyList.add(thing);
+                		}
+                		if(thing.toString().contentEquals("scroll"))
+                		{
+                			Assets.playSound("scroll");
+                			if(((MapObject)thing.getUserData()).getProperties().get("type") != null)
+                			{
+                				String ref = ((MapObject)thing.getUserData()).getProperties().get("type").toString().replace("@", ":");
+                				GlobalData.knowledge.get("Other").put(ref,Assets.scriptures.get(ref));
+                			}
                 			destroyList.add(thing);
                 		}
                 	}
@@ -515,22 +526,22 @@ public class GameScreen implements Screen{
             public void endContact(Contact contact){
             	if(contact.getFixtureA() == null || contact.getFixtureB() == null)
             		return;
-            	Body mainguy = null;
-            	Body npc = null;
-                Body bodyA = contact.getFixtureA().getBody();
-                Body bodyB = contact.getFixtureB().getBody();
-                if(bodyA.getUserData() == "npc")
+            	ZionBody mainguy = null;
+            	ZionBody npc = null;
+                ZionBody bodyA = new ZionBody(contact.getFixtureA().getBody());
+                ZionBody bodyB = new ZionBody(contact.getFixtureB().getBody());
+                if(bodyA.toString() == "npc")
                 	npc = bodyA;
-                if(bodyB.getUserData() == "npc")
+                if(bodyB.toString() == "npc")
                 	npc = bodyB;
-                if(bodyA.getUserData() == "main")
+                if(bodyA.toString() == "main")
                 	mainguy = bodyA;
-                if(bodyB.getUserData() == "main")
+                if(bodyB.toString() == "main")
                 	mainguy = bodyB;
-                Gdx.app.log("endContact", "between " + bodyA.getUserData() + " and " + bodyB.getUserData());
+                Gdx.app.log("endContact", "between " + bodyA.toString() + " and " + bodyB.toString());
                 if(npc != null)
                 {
-                	Npc n = GlobalData.npcs.get(npc);
+                	Npc n = GlobalData.npcs.get(npc.body);
                 	n.currentAction = "walk";
                 }
                 if(mainguy != null)
@@ -565,7 +576,10 @@ public class GameScreen implements Screen{
 	public void render(float delta) {
 		while(!destroyList.isEmpty())
 		{
-			world.destroyBody(destroyList.remove(0));
+			ZionBody z = destroyList.remove(0);
+			MapObjects mObjects = Assets.map.getLayers().get("Objects").getObjects();
+			mObjects.remove((MapObject)z.getUserData());
+			world.destroyBody(z.body);
 		}
 		
 		lifeValLabel.setText((int)Math.round(GlobalData.life)+"%");
@@ -586,13 +600,13 @@ public class GameScreen implements Screen{
 		world.getBodies(bi);
         
         //System.out.println(spriteheight);
-		for (Body b: bi)
+		for(Body bb: bi)
 		{
-
+			ZionBody b = new ZionBody(bb);
 		    // Get the bodies user data - in this example, our user 
 		    
 		    // data is an instance of the Entity class
-		    String e = (String) b.getUserData();
+		    String e = b.toString();
 		    //Gdx.app.log(TAG,e);
 
 		    if (e == "main") {
@@ -602,7 +616,7 @@ public class GameScreen implements Screen{
 		    
 		    if(e == "npc")
 		    {
-		    	Npc n = GlobalData.npcs.get(b);
+		    	Npc n = GlobalData.npcs.get(bb);
 		    	if (n.position().epsilonEquals(n.nextposition(), 0.01f))
 		    	{
 		    		if(n.reverse)
@@ -637,7 +651,7 @@ public class GameScreen implements Screen{
 		    		float mul = (walk_speed*walk_speed)/(delt.x*delt.x+delt.y*delt.y);
 		    		b.setLinearVelocity(delt.x*mul,delt.y*mul);
 		    	}
-    			Vector2 diff = n.position().sub(mainBody.getPosition());
+    			Vector2 diff = n.position().sub(mainZionBody.getPosition());
     			if(Math.abs(diff.x) < game.camera.viewportWidth && Math.abs(diff.y)<game.camera.viewportHeight)
     			{
     				Vector3 tmp = new Vector3(n.position().x, n.position().y,0f);
@@ -650,7 +664,7 @@ public class GameScreen implements Screen{
 		//System.out.println(currentAction);
 		currentFrame = getCurrentFrame(Assets.animations.get("mainplayer").get(currentAction));
 		
-        Vector3 tmp = new Vector3(mainBody.getPosition().x, mainBody.getPosition().y,0f);
+        Vector3 tmp = new Vector3(mainZionBody.getPosition().x, mainZionBody.getPosition().y,0f);
         game.camera.project(tmp);
         sprites.add(new CTexture(currentFrame, tmp.x-currentFrame.getRegionWidth()/2f, tmp.y-25));
         game.batch.begin();

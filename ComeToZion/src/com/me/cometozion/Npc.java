@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Polyline;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Body;
 
 
 public class Npc
@@ -17,7 +16,7 @@ public class Npc
 	HashMap<Question,Boolean> questions;
 	public boolean baptized;
 	Polyline path;
-	Body body;
+	ZionBody body;
 	public float trust = 0.5f;
 	int currpos = 0;
 	int nextpos = 1;
@@ -35,7 +34,7 @@ public class Npc
 	//Vector<ConversationTopic> topics = new Vector<ConversationTopic>();
 	public String spriteName;
 	
-	public Npc(String name, String[] questions, String occupation, Body b, float trst)
+	public Npc(String name, String[] questions, String occupation, ZionBody b, float trst)
 	{
 		this.attributes.put("name",name);
 		this.trust = trst;
