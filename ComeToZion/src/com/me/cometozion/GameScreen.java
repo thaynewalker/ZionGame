@@ -1,5 +1,6 @@
 package com.me.cometozion;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -74,6 +75,8 @@ public class GameScreen implements Screen{
 		}
 	}
 	ComeToZionMain game;
+	private final ArrayList<Body> destroyList = new ArrayList<Body>();
+	
 	private final String TAG = "GameMap";
 	
 	private ZionOrthogonalTiledMapRenderer renderer;
@@ -396,7 +399,15 @@ public class GameScreen implements Screen{
 	            	rdef.position.set(robj.getEllipse().x*Assets.px_to_local_scale+robj.getEllipse().width*Assets.px_to_local_scale/2,
 	            			robj.getEllipse().y*Assets.px_to_local_scale+robj.getEllipse().height*Assets.px_to_local_scale/2);
 	            	Body rbody = world.createBody(rdef);
-	            	rbody.setUserData("static");
+	            	if(robj.getProperties().get("type") != null)
+	            	{
+	            		rbody.setUserData(robj.getName());
+	            	}
+	            	else
+	            	{
+	            		rbody.setUserData("static");
+	            	}
+	            	//rbody.setUserData("static");
 	            	CircleShape rshape = new CircleShape(); // TODO this needs to be disposed of
 	            	rshape.setRadius((robj.getEllipse().width+robj.getEllipse().height)*Assets.px_to_local_scale/4);
 	            	FixtureDef rfdef = new FixtureDef();
@@ -494,7 +505,7 @@ public class GameScreen implements Screen{
                 		{
                 			Assets.playSound("cash");
                 			GlobalData.cash += MathUtils.random(30);
-                			//thing.destroyFixture(thing.getFixtureList().get(0));
+                			destroyList.add(thing);
                 		}
                 	}
                 }
@@ -502,6 +513,8 @@ public class GameScreen implements Screen{
 
             @Override
             public void endContact(Contact contact){
+            	if(contact.getFixtureA() == null || contact.getFixtureB() == null)
+            		return;
             	Body mainguy = null;
             	Body npc = null;
                 Body bodyA = contact.getFixtureA().getBody();
@@ -550,6 +563,11 @@ public class GameScreen implements Screen{
 
 	@Override
 	public void render(float delta) {
+		while(!destroyList.isEmpty())
+		{
+			world.destroyBody(destroyList.remove(0));
+		}
+		
 		lifeValLabel.setText((int)Math.round(GlobalData.life)+"%");
         faithValLabel.setText((int)Math.round(GlobalData.faith)+"%");
         cashValLabel.setText("$"+GlobalData.cash);
