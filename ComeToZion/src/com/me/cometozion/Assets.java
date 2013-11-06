@@ -1,11 +1,16 @@
 package com.me.cometozion;
 
 import java.awt.Point;
+import java.io.IOException;
+import java.net.URL;
+import java.security.CodeSource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 import com.badlogic.gdx.Application.ApplicationType;
 import com.badlogic.gdx.Gdx;
@@ -58,7 +63,7 @@ public class Assets {
 	public static HashMap<String,Point> itemValues = new HashMap<String,Point>();
 	
 	
-	public static void load () {
+	public static void load () throws Exception {
 		animations = new HashMap<String, HashMap<String, Animation[]> >();
 		String mappath = Config.asString("map.filepath", "data/map/test.tmx");
 		map = new TmxMapLoader().load(mappath);
@@ -69,8 +74,8 @@ public class Assets {
 		loadTextures();
 		createAnimations();
 		loadFonts();
-		loadSounds();
 		loadMusic();
+		loadSounds();
 		loadDialogs();
 		loadConfigData();
 		GlobalData.startBgMusic();
@@ -146,7 +151,7 @@ public class Assets {
 			if(current == "dlg" && line.contains("#"))
 			{
 				try {
-					System.out.println("For splitting: "+line.replaceAll("\\(([^,]*),\\s*([^,]*),\\s*(.*)\\s*#.*", "$1@$2@$3"));
+					//System.out.println("For splitting: "+line.replaceAll("\\(([^,]*),\\s*([^,]*),\\s*(.*)\\s*#.*", "$1@$2@$3"));
 					String[] dlgtxt = line.replaceAll("\\(([^,]*),\\s*([^,]*),\\s*(.*)(,|\\])\\s*#.*", "$1@$2@$3").split("@");
 					String speaker = dlgtxt[0] == "None" ? "Me" : dlgtxt[0].replace("\"", "");
 					Kekka code = !dlgtxt[1].equals("-1") ? actions.get(Integer.parseInt(dlgtxt[1])) : null;
@@ -164,13 +169,13 @@ public class Assets {
 					for(String s: dlgtxt[2].split("\\),"))
 					{
 						s = s.replaceAll("[^0-9-]*([0-9-]*), 0, ([0-9-]*).*","$1,$2");
-						System.out.println(s);
+						//System.out.println(s);
 						if(s.contains(","))
 						{
 							String text = texts.get(Integer.parseInt(s.split(",")[0]));
 							if(dlgmap.containsKey(text))
 							{
-								System.out.println("Add "+dlgmap.get(text)+" to "+dlg);
+								//System.out.println("Add "+dlgmap.get(text)+" to "+dlg);
 								dlg.addDialog(dlgmap.get(text));
 							}
 							else
@@ -183,14 +188,14 @@ public class Assets {
 								if(c != null)
 									c.setDialog(ndlg);
 								dlgmap.put(text,ndlg);
-								System.out.println("Add "+ndlg+" to "+dlg);
+								//System.out.println("Add "+ndlg+" to "+dlg);
 								dlg.addDialog(ndlg);
 							}
 						}
 					}
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
-					System.out.println(line+" "+dlgcnt);
+					//System.out.println(line+" "+dlgcnt);
 					e1.printStackTrace();
 				}
 				dlgcnt++;
@@ -199,23 +204,90 @@ public class Assets {
 		
 		
 	}
-	private static void loadMusic(){
+	private static List<FileHandle> getFilesInDir(String dirname)
+	{
 		FileHandle dh;
-		if (Gdx.app.getType() == ApplicationType.Android) {
-			  dh = Gdx.files.internal("data/music/");
-			} else {
-			  // ApplicationType.Desktop ..
-			  dh = Gdx.files.internal("./bin/data/music/");
+		FileHandle[] fhs;
+		if (Gdx.app.getType() == ApplicationType.Android)
+		{
+			dh = Gdx.files.internal(dirname);
+			fhs = dh.list();
+		}
+		else
+		{
+			// ApplicationType.Desktop ..
+			dh = Gdx.files.internal("./bin/"+dirname);
+			fhs = dh.list();
+		}
+
+		List<FileHandle> list = new ArrayList<FileHandle>();
+
+		if(fhs.length == 0)
+		{
+			CodeSource src = Assets.class.getProtectionDomain().getCodeSource();
+
+			if( src != null )
+			{
+				URL jar = src.getLocation();
+				ZipInputStream zip;
+				try
+				{
+					zip = new ZipInputStream( jar.openStream());
+
+					ZipEntry ze = null;
+
+					while( ( ze = zip.getNextEntry() ) != null )
+					{
+						String entryName = ze.getName();
+						if( entryName.startsWith(dirname) )
+						{
+							FileHandle fh = Gdx.files.internal(entryName);
+							if(!fh.isDirectory())
+							{
+								list.add(fh);
+							}
+							System.out.println(entryName);
+						}
+					}
+				}
+				catch (IOException e)
+				{
+					System.out.println("error listing directory from jar: "+dirname);
+					e.printStackTrace();
+				}
+
 			}
-		FileHandle[] fhs = dh.list();
-		System.out.println(fhs.length);
-		for (int i = 0; i < fhs.length; i++) {
-			String name = fhs[i].name();
-			System.out.println(dh.path()+"/"+name);
-			Music tmp = Gdx.audio.newMusic(Gdx.files.internal("data/music/"+name));
-			tmp.setLooping(false);
-			tmp.setVolume(0.09f);
-			gameMusic.add(tmp);
+		}
+		else
+		{
+			for (FileHandle fh: fhs) {
+				if(!fh.isDirectory())
+				{
+					list.add(fh);
+				}
+			}
+		}
+		return list;
+	}
+
+	private static void loadMusic()
+	{
+		List<FileHandle> fhs = getFilesInDir("data/music");
+		for (FileHandle fh: fhs)
+		{
+			
+			try
+			{
+				Music tmp = Gdx.audio.newMusic(fh);
+				tmp.setLooping(false);
+				tmp.setVolume(0.09f);
+				gameMusic.add(tmp);
+			}
+			catch (Exception e)
+			{
+				//Bad filename
+			}
+			
 		}
 	} 
 
@@ -320,35 +392,33 @@ public class Assets {
 		textFont.setScale(1.0f / 24);
 		flyupFont.setScale(1.0f / 24);
 	}
+	
+	
 
-	private static void loadSounds ()
+	private static void loadSounds () throws Exception
 	{
-		System.out.println("foo");
-		FileHandle dh;
-		if (Gdx.app.getType() == ApplicationType.Android) {
-			  dh = Gdx.files.internal("data/sounds/");
-			} else {
-			  // ApplicationType.Desktop ..
-			  dh = Gdx.files.internal("./bin/data/sounds");
-			}
-		FileHandle[] fhs = dh.list();
-		System.out.println(fhs.length);
-		for (int i = 0; i < fhs.length; i++) {
-			String name = fhs[i].name();
-			String name_base = fhs[i].nameWithoutExtension().split("_")[0];
+
+		List<FileHandle> fhs = getFilesInDir("data/sounds");
+		for (FileHandle fh: fhs)
+		{
+			try
+			{
+			String name_base = fh.nameWithoutExtension().split("_")[0];
 			if(sounds.get(name_base) == null)
 			{
 				sounds.put(name_base, new Vector<Sound>());
 			}
-			sounds.get(name_base).add(loadSound(name));
-			System.out.println("added "+name);
+			sounds.get(name_base).add(Gdx.audio.newSound(fh));
+			//System.out.println("added "+name);
+			}
+			catch(Exception e)
+			{
+				
+			}
 		}
 	}
 
-	private static Sound loadSound (String filename) {
-		return Gdx.audio.newSound(Gdx.files.internal("data/sounds/" + filename));
-	}
-
+	
 
 	public static void playSound(String name){
 		sounds.get(name).get(MathUtils.random(0,sounds.get(name).size()-1)).play(1);
