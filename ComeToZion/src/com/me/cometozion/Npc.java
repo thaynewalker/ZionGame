@@ -50,7 +50,7 @@ public class Npc
 		this.goodsQuantity = MathUtils.random(3);
 		this.attributes.put("goodsType",Assets.occupationGoods.get(attributes.get("occupation"))[MathUtils.random(Assets.occupationGoods.get(attributes.get("occupation")).length-1)]);
 		this.goodsType = attributes.get("goodsType");
-		this.goodsPrice = Assets.itemValues.get(attributes.get("goodsType")).y;
+		this.goodsPrice = Assets.itemValues.get(attributes.get("goodsType"))[1];
 		this.attributes.put("goodsPrice",goodsPrice+" cash");
 	}
 	
