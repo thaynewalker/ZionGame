@@ -164,7 +164,7 @@ public class GameScreen implements Screen{
 				{
 					GlobalData.life -= stateTime/50f;
 					GlobalData.stopping = false;
-					System.out.println("Life:"+GlobalData.life);
+					//System.out.println("Life:"+GlobalData.life);
 				}
 				stateTime %= .5f;
 				if(stateTime > 0)
@@ -194,9 +194,9 @@ public class GameScreen implements Screen{
 		Assets.px_to_local_scale = game.width/(Float.parseFloat(game.assets.map.getLayers().get("Base").getProperties().get("height").toString())*tilesize);
 		
 		MapObjects mObjects = game.assets.map.getLayers().get("Objects").getObjects();
-		Gdx.app.log(TAG, "Objects:"+mObjects.getCount());
+		//Gdx.app.log(TAG, "Objects:"+mObjects.getCount());
 		MapObjects nObjects = game.assets.map.getLayers().get("npcs").getObjects();
-		Gdx.app.log(TAG, "NPC Objects:"+nObjects.getCount());
+		//Gdx.app.log(TAG, "NPC Objects:"+nObjects.getCount());
 		
 		renderer = new ZionOrthogonalTiledMapRenderer(game.assets.map, rendersize);
 
@@ -314,15 +314,15 @@ public class GameScreen implements Screen{
 		for(Iterator<MapObject> nObjs = nObjects.iterator(); nObjs.hasNext();){
 	        // I have set just about everything possible(I only have one object at the moment so nObj only gets set once.
 	            MapObject nObj = nObjs.next();
-	            Gdx.app.log(TAG, "Obj:"+nObj.getClass().getName());
+	            //Gdx.app.log(TAG, "Obj:"+nObj.getClass().getName());
 	            //System.out.println("***"+nObj.getClass().getName());
 	            if(nObj.getClass().getName() == "com.badlogic.gdx.maps.objects.PolylineMapObject")
 	            {
 	            	PolylineMapObject robj = (PolylineMapObject)nObj;
 	            	String pathfor = robj.getName();
 	            	paths.put(pathfor,robj.getPolyline());
-	            	System.out.println(robj.getPolyline().getTransformedVertices());
-	            	System.out.println(robj.getPolyline().getVertices());
+	            	//System.out.println(robj.getPolyline().getTransformedVertices());
+	            	//System.out.println(robj.getPolyline().getVertices());
 	            }
 	            else if(nObj.getClass().getName() == "com.badlogic.gdx.maps.objects.EllipseMapObject")
 	            {
@@ -350,13 +350,13 @@ public class GameScreen implements Screen{
 		for(Iterator<MapObject> mObjs = mObjects.iterator(); mObjs.hasNext();){
 	        // I have set just about everything possible(I only have one object at the moment so mObj only gets set once.
 	            MapObject mObj = mObjs.next();
-	            Gdx.app.log(TAG, "Obj!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!:"+mObj.getClass().getName()+" "+mObj.getName());
+	            //Gdx.app.log(TAG, "Obj!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!:"+mObj.getClass().getName()+" "+mObj.getName());
 	            if(mObj.getClass().getName() == "com.badlogic.gdx.maps.objects.RectangleMapObject")
 	            {
 	            	RectangleMapObject robj = (RectangleMapObject)mObj;
 	            	BodyDef rdef = new BodyDef();
 	            	rdef.type = BodyType.StaticBody;
-	            	Gdx.app.log("test", "w: "+robj.getRectangle().width+" x:"+robj.getRectangle().x+" "+Assets.px_to_local_scale+" ");
+	            	//Gdx.app.log("test", "w: "+robj.getRectangle().width+" x:"+robj.getRectangle().x+" "+Assets.px_to_local_scale+" ");
 	            	if(robj.getRectangle().width == 0)
 	            	{
 	            		//Check if this is actually an image object
@@ -466,7 +466,7 @@ public class GameScreen implements Screen{
                 if(bodyB != npc && bodyB != mainguy)
                 	thing = bodyB;
                 
-                Gdx.app.log("beginContact", "between " + bodyA.toString() + " and " + bodyB.toString());
+                //Gdx.app.log("beginContact", "between " + bodyA.toString() + " and " + bodyB.toString());
                 if(mainguy != null)
                 {
                 	//Gdx.app.log(TAG, "Obj:"+contact.getFixtureA().getZionBody().getUserData()+" "+contact.getFixtureB().getZionBody());
@@ -538,7 +538,7 @@ public class GameScreen implements Screen{
                 	mainguy = bodyA;
                 if(bodyB.toString() == "main")
                 	mainguy = bodyB;
-                Gdx.app.log("endContact", "between " + bodyA.toString() + " and " + bodyB.toString());
+                //Gdx.app.log("endContact", "between " + bodyA.toString() + " and " + bodyB.toString());
                 if(npc != null)
                 {
                 	Npc n = GlobalData.npcs.get(npc.body);
