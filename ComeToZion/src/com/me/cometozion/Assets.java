@@ -60,7 +60,7 @@ public class Assets {
 	public static Vector<Music> gameMusic = new Vector<Music>();
 	public static HashMap<String,Integer> foodTypes = new HashMap<String,Integer>();
 	public static HashMap<String,String[]> occupationGoods = new HashMap<String,String[]>();
-	public static HashMap<String,Point> itemValues = new HashMap<String,Point>();
+	public static HashMap<String,int[]> itemValues = new HashMap<String,int[]>();
 	
 	
 	public static void load () throws Exception {
@@ -346,7 +346,7 @@ public class Assets {
 		for(String g: itemTypes)
 		{
 			String[] v = Config.asString(g+".value", "5").split(",");
-			Assets.itemValues.put(g, new Point(Integer.parseInt(v[0]),Integer.parseInt(v[1])));
+			Assets.itemValues.put(g, new int[]{Integer.parseInt(v[0]),Integer.parseInt(v[1])});
 		}
 	}
 	private static void createAnimations()
