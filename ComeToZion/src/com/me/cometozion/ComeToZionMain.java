@@ -26,7 +26,15 @@ public class ComeToZionMain extends Game{
 		camera.setToOrtho(false, (width / height) * 10, 10);
 		camera.update();
 		//assets = new Assets();
+		try
+		{
 		Assets.load();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Errors loading assets.");
+			e.printStackTrace();
+		}
 		//this.setScreen(new GameScreen(this));
 		this.setScreen(new MainMenuScreen(this));
 	}
